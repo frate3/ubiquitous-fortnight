@@ -28,9 +28,11 @@ public class moveemnt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ground();
         Inputs();
         cameraMove();
-        ground();
+        gravity();
+        jump();
         
 
         moveDirection.x = moveX * speed;
@@ -40,9 +42,24 @@ public class moveemnt : MonoBehaviour
 
         
 
-        cc.SimpleMove(moveDirection);
+        cc.Move(moveDirection * Time.deltaTime);
     }
 
+    void jump()
+    {
+        if (Input.GetButtonDown("Jump") && grounded)
+        {
+            moveDirection.y = jumpHeight;
+        }
+    }
+
+    void gravity()
+    {
+        if (!grounded)
+        {
+            moveDirection.y += Physics.gravity.y * Time.deltaTime;
+        }
+    }
     void cameraMove()
     {
         transform.rotation = Quaternion.Euler(0, camX * camSpeed, 0);
@@ -57,8 +74,12 @@ public class moveemnt : MonoBehaviour
     void Inputs()
     {
         {
-            moveX = Input.GetAxisRaw("Horizontal");
-            moveZ = Input.GetAxisRaw("Vertical");
+            if (grounded)
+            {
+                moveX = Input.GetAxisRaw("Horizontal");
+                moveZ = Input.GetAxisRaw("Vertical");
+            }
+            
             camX += Input.GetAxis("Mouse X");
             camY -= Input.GetAxis("Mouse Y");
         }
