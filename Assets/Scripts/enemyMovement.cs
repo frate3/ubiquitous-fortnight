@@ -8,30 +8,57 @@ public class enemyMovement : MonoBehaviour
     [SerializeField] GameObject player;
     NavMeshAgent agent;
     int count;
+    Animator animator;
+    bool walking;
+
     // Start is called before the first frame update
+    void Awake(){
+        animator = GetComponent<Animator>();
+    }
+
     void Start()
     {
+        walking = true;
         agent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        agent.destination = player.transform.position;
+        Check();
+        print(count);
+        if (walking){
+            animator.SetBool("Walking", true);
+            agent.destination = player.transform.position;
+        } else {
+            animator.SetBool("Walking", false);
+        }
+        
+        
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("bullet"))
         {
-            if (count >= 5)
-            {
-                Destroy(gameObject);
-            }
-            else
-            {
-                count++;
-            }
+            count++;
+        }
+    }
+
+    private void Die () {
+        
+        Destroy(gameObject);
+    }
+
+    void Check(){
+        
+
+        if (count >= 5){
+            animator.SetBool("Dead", true);
+            animator.SetBool("Attacking", false);
+            walking = false;
+
+            Invoke("Die", 1.15f); 
         }
     }
 }
