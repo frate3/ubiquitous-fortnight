@@ -20,9 +20,9 @@ public class enemyMovement : MonoBehaviour
         agent.destination = player.transform.position;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.collider.CompareTag("bullet"))
+        if (other.CompareTag("bullet"))
         {
             if (count >= 5)
             {
@@ -33,6 +33,5 @@ public class enemyMovement : MonoBehaviour
                 count++;
             }
         }
-        
     }
 }
