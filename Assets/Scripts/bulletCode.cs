@@ -17,13 +17,7 @@ public class bulletCode : MonoBehaviour
         
     }
 
-    private void Update()
-    {
-        if (rb != null)
-        {
-            Debug.Log("fax");
-        }
-    }
+    
 
     public void Init(GameObject player, GameObject crosshair, GameObject gun)
     {

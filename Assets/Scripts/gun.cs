@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class gun : MonoBehaviour
 {
 
+    [SerializeField] Text ammoCounter;
     float bulletsLeft;
     /*public float bulletsFired;*/
     float mag = 40;
@@ -20,7 +22,7 @@ public class gun : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
         maxMag = mag;
         bullet = Resources.Load("bullet") as GameObject;
     }
@@ -28,33 +30,34 @@ public class gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        debug();
+        ammoCounter.text = mag.ToString("0");
         fire();
-        
-        
+
+
     }
 
     void fire()
     {
+        if (mag < 40 && Input.GetKeyDown(KeyCode.R))
+        {
+            reload = true;
+            Invoke("reloadCheck", timeBetweenReload);
+        }
         if (Input.GetMouseButton(0))
         {
-            if(mag < 40 && Input.GetKeyDown(KeyCode.R))
-            {
-                reload = true;
-                Invoke("reloadCheck", timeBetweenReload);
-            }
+
             if (!reload && readyToShoot && mag > 0)
             {
                 readyToShoot = false;
                 GameObject newBullet = Instantiate(bullet, shootPoint.transform.position, shootPoint.transform.rotation);
                 mag--;
+
                 bulletCode bulletScript = newBullet.GetComponent<bulletCode>();
                 bulletScript.Init(player, crosshair, shootPoint);
                 Destroy(newBullet, 10f);
-                
                 Invoke("reset", timeBetweenShoot);
             }
-            
+
         }
     }
 
@@ -63,7 +66,7 @@ public class gun : MonoBehaviour
         reload = false;
         mag = maxMag;
     }
-    
+
     void debug()
     {
         Debug.Log("This is mag " + mag);

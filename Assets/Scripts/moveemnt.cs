@@ -71,13 +71,13 @@ public class moveemnt : MonoBehaviour
     {
         if (Input.GetButtonDown("Sprint"))
         {
-            Debug.Log("sprinting");
+            
             lastSpeed = speed;
             speed = sprintSpeed;
         }
         else if (Input.GetButtonUp("Sprint"))
         {
-            Debug.Log("not sprinting");
+            
             speed = lastSpeed;
         }
         
