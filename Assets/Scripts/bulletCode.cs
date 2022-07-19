@@ -6,7 +6,7 @@ public class bulletCode : MonoBehaviour
 {
     RaycastHit hit;
     Rigidbody rb;
-    float force = 12f;
+    float force = 21f;
     GameObject player;
     // Start is called before the first frame update
     void Awake()
@@ -30,10 +30,10 @@ public class bulletCode : MonoBehaviour
         if (player != null) {
 
 
-            Ray r = new Ray(player.transform.position, player.transform.forward);
+            Ray r = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
 
             Physics.Raycast(r, out hit, Mathf.Infinity);
-            Vector3 direction = Vector3.zero;
+            Vector3 direction = new Vector3();
 
             if (hit.collider != null)
             {
@@ -42,16 +42,22 @@ public class bulletCode : MonoBehaviour
             }
             else
             {
-                print(hit.collider);
+                print("it is definitely null");
                 direction = r.GetPoint(50) - gun.transform.position;
             }
 
-            direction.y = 0;
+            
+            //Debug.DrawRay(gun.transform.position, direction, Color.red, 15f);
             rb.AddForce(direction.normalized * force, ForceMode.Impulse);
         }
 
         
         
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Destroy(gameObject);
     }
 
 

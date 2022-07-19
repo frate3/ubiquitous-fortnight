@@ -27,7 +27,7 @@ public class gun : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             
-            GameObject newBullet = Instantiate(bullet, shootPoint.transform.position, Quaternion.identity);
+            GameObject newBullet = Instantiate(bullet, shootPoint.transform.position, shootPoint.transform.rotation);
             bulletCode bulletScript = newBullet.GetComponent<bulletCode>();
             bulletScript.Init(player, crosshair, shootPoint);
             Destroy(newBullet, 10f);
