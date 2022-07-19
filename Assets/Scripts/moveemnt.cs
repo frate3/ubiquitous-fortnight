@@ -5,6 +5,7 @@ using UnityEngine;
 public class moveemnt : MonoBehaviour
 {
 
+    Vector3 direction;
     [SerializeField] GameObject touchGround;
     bool grounded;
     public float speed = 8f;
@@ -32,15 +33,17 @@ public class moveemnt : MonoBehaviour
         Inputs();
         cameraMove();
         gravity();
-        jump();
+        
         
 
         moveDirection.x = moveX * speed;
         moveDirection.z = moveZ * speed;
 
+        
+
         moveDirection = transform.TransformDirection(moveDirection);
 
-        
+        jump();
 
         cc.Move(moveDirection * Time.deltaTime);
     }
@@ -50,6 +53,13 @@ public class moveemnt : MonoBehaviour
         if (Input.GetButtonDown("Jump") && grounded)
         {
             moveDirection.y = jumpHeight;
+            direction = moveDirection;
+        }
+        if (!grounded)
+        {
+            moveDirection.x = direction.x;
+            moveDirection.z = direction.z;
+            
         }
     }
 
@@ -60,6 +70,7 @@ public class moveemnt : MonoBehaviour
             moveDirection.y += Physics.gravity.y * Time.deltaTime;
         }
     }
+
     void cameraMove()
     {
         transform.rotation = Quaternion.Euler(0, camX * camSpeed, 0);
