@@ -53,7 +53,7 @@ public class gun : MonoBehaviour
                 mag--;
 
                 bulletCode bulletScript = newBullet.GetComponent<bulletCode>();
-                bulletScript.Init(player, crosshair, shootPoint);
+                bulletScript.Init(player, shootPoint);
                 Destroy(newBullet, 10f);
                 Invoke("reset", timeBetweenShoot);
             }

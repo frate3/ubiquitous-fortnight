@@ -59,6 +59,7 @@ public class moveemnt : MonoBehaviour
             moveDirection.y = jumpHeight;
             direction = moveDirection;
         }
+
         //if (!grounded)
         //{
         //    moveDirection.x = direction.x;

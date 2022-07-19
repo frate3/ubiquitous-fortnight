@@ -19,7 +19,7 @@ public class bulletCode : MonoBehaviour
 
     
 
-    public void Init(GameObject player, GameObject crosshair, GameObject gun)
+    public void Init(GameObject player, GameObject gun)
     {
         if (player != null) {
 
