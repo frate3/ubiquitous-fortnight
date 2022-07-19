@@ -30,6 +30,8 @@ public class gun : MonoBehaviour
         startPosition = transform.localPosition;
         maxMag = mag;
         bullet = Resources.Load("bullet") as GameObject;
+        lowerPosition = transform.localPosition - new Vector3(0, 1, 0);
+
     }
 
     // Update is called once per frame
@@ -38,7 +40,6 @@ public class gun : MonoBehaviour
         ammoCounter.text = mag.ToString("0");
         fire();
         reloadAnim();
-        lowerPosition = transform.localPosition - new Vector3(0, 3, 0);
 
 
     }
