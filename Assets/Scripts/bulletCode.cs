@@ -6,7 +6,7 @@ public class bulletCode : MonoBehaviour
 {
     RaycastHit hit;
     Rigidbody rb;
-    float force = 21f;
+    float force = 32f;
     GameObject player;
     // Start is called before the first frame update
     void Awake()
@@ -55,7 +55,7 @@ public class bulletCode : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);
     }
