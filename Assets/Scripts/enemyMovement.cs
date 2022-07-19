@@ -7,6 +7,7 @@ public class enemyMovement : MonoBehaviour
 {
     [SerializeField] GameObject player;
     NavMeshAgent agent;
+    int count;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,5 +18,21 @@ public class enemyMovement : MonoBehaviour
     void Update()
     {
         agent.destination = player.transform.position;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("bullet"))
+        {
+            if (count >= 5)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                count++;
+            }
+        }
+        
     }
 }

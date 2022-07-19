@@ -5,9 +5,11 @@ using UnityEngine;
 public class moveemnt : MonoBehaviour
 {
 
+    Vector3 direction;
+    float lastSpeed;
     [SerializeField] GameObject touchGround;
     bool grounded;
-    public float speed = 8f;
+    float speed = 8f;
     public float jumpHeight = 5f;
     public float camSpeed = 4f;
     CharacterController cc;
@@ -17,9 +19,11 @@ public class moveemnt : MonoBehaviour
     [SerializeField] Camera cam;
     float camX;
     float camY;
+    float sprintSpeed = 12f;
     // Start is called before the first frame update
     void Start()
     {
+        lastSpeed = speed;
         cc = GetComponent<CharacterController>();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -32,15 +36,18 @@ public class moveemnt : MonoBehaviour
         Inputs();
         cameraMove();
         gravity();
-        jump();
+        sprint();
+        
         
 
         moveDirection.x = moveX * speed;
         moveDirection.z = moveZ * speed;
 
+        
+
         moveDirection = transform.TransformDirection(moveDirection);
 
-        
+        jump();
 
         cc.Move(moveDirection * Time.deltaTime);
     }
@@ -50,7 +57,30 @@ public class moveemnt : MonoBehaviour
         if (Input.GetButtonDown("Jump") && grounded)
         {
             moveDirection.y = jumpHeight;
+            direction = moveDirection;
         }
+        //if (!grounded)
+        //{
+        //    moveDirection.x = direction.x;
+        //    moveDirection.z = direction.z;
+            
+        //}
+    }
+
+    void sprint()
+    {
+        if (Input.GetButtonDown("Sprint"))
+        {
+            Debug.Log("sprinting");
+            lastSpeed = speed;
+            speed = sprintSpeed;
+        }
+        else if (Input.GetButtonUp("Sprint"))
+        {
+            Debug.Log("not sprinting");
+            speed = lastSpeed;
+        }
+        
     }
 
     void gravity()
@@ -60,10 +90,13 @@ public class moveemnt : MonoBehaviour
             moveDirection.y += Physics.gravity.y * Time.deltaTime;
         }
     }
+
     void cameraMove()
     {
-        transform.rotation = Quaternion.Euler(0, camX * camSpeed, 0);
-        cam.transform.localRotation = Quaternion.Euler(camY * camSpeed, 0, 0);
+        transform.rotation = Quaternion.Euler(0, camX, 0);
+
+        camY = Mathf.Clamp(camY, -90, 90);
+        cam.transform.localRotation =  Quaternion.Euler(camY, 0, 0);
     }
 
     
@@ -80,8 +113,8 @@ public class moveemnt : MonoBehaviour
                 moveZ = Input.GetAxisRaw("Vertical");
             }
             
-            camX += Input.GetAxis("Mouse X");
-            camY -= Input.GetAxis("Mouse Y");
+            camX += Input.GetAxis("Mouse X") * camSpeed;
+            camY -= Input.GetAxis("Mouse Y") * camSpeed;
         }
     }
 }
