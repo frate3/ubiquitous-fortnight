@@ -6,12 +6,15 @@ using UnityEngine.UI;
 public class gun : MonoBehaviour
 {
 
+    float currentTime = 0f;
+    float timeToMove = .5f;
+    bool canReloadAnim = false;
     [SerializeField] Text ammoCounter;
     float bulletsLeft;
     /*public float bulletsFired;*/
     float mag = 40;
     float maxMag;
-    float timeBetweenReload = 1;
+    float timeBetweenReload = 2;
     bool reload = false;
     float timeBetweenShoot = 0.2f;
     bool readyToShoot = true;
@@ -19,10 +22,12 @@ public class gun : MonoBehaviour
     [SerializeField] GameObject player;
     GameObject bullet;
     [SerializeField] GameObject shootPoint;
+    Vector3 startPosition;
+    Vector3 lowerPosition;
     // Start is called before the first frame update
     void Start()
     {
-
+        startPosition = transform.localPosition;
         maxMag = mag;
         bullet = Resources.Load("bullet") as GameObject;
     }
@@ -32,6 +37,8 @@ public class gun : MonoBehaviour
     {
         ammoCounter.text = mag.ToString("0");
         fire();
+        reloadAnim();
+        lowerPosition = transform.localPosition - new Vector3(0, 3, 0);
 
 
     }
@@ -40,6 +47,7 @@ public class gun : MonoBehaviour
     {
         if (mag < 40 && Input.GetKeyDown(KeyCode.R))
         {
+            canReloadAnim = true;
             reload = true;
             Invoke("reloadCheck", timeBetweenReload);
         }
@@ -59,6 +67,26 @@ public class gun : MonoBehaviour
             }
 
         }
+    }
+
+    void reloadAnim()
+    {
+        if (canReloadAnim)
+        {
+            if (currentTime <= timeToMove)
+            {
+                currentTime += Time.deltaTime;
+                
+                transform.localPosition = Vector3.Lerp(startPosition, lowerPosition, currentTime / timeToMove);
+                
+            }
+            else
+            {
+                canReloadAnim = false;
+            }
+            
+        }
+        
     }
 
     void reloadCheck()
