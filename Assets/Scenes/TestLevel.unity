@@ -2511,7 +2511,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 36.9, y: 23.4}
+  m_AnchoredPosition: {x: 36.899994, y: 23.400024}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1274980956
@@ -2574,6 +2574,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae37f6723f2a224ab18bafc3897d860, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ps: {fileID: 198000012944515248, guid: 9defeac88977c0d448aa4541073ee9e4, type: 3}
   animController: {fileID: 0}
   ammoCounter: {fileID: 1928301962}
   reload: 0
@@ -3117,7 +3118,8 @@ MonoBehaviour:
   pb: {fileID: 114769782792377903}
   spb: {fileID: 5795139368156951652}
   health: 100
-  sprintTime: 0
+  sprintTime: 500
+  sprinting: 0
 --- !u!143 &1894693157
 CharacterController:
   m_ObjectHideFlags: 0
