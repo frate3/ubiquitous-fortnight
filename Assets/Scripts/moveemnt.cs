@@ -25,11 +25,14 @@ public class moveemnt : MonoBehaviour
     public ProgressBar pb;
     public ProgressBar spb;
     public float health = 100;
-    public float sprintTime;
+    public float sprintTime = 500;
+    float maxSprintTime;
+    public bool sprinting = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        maxSprintTime = sprintTime;
         lastSpeed = speed;
         cc = GetComponent<CharacterController>();
         Cursor.visible = false;
@@ -45,12 +48,13 @@ public class moveemnt : MonoBehaviour
         gravity();
         sprint();
         pb.BarValue = health; 
-        spb.BarValue = sprintTime;
+        spb.BarValue = sprintTime / 5;
         
 
         moveDirection.x = moveX * speed;
         moveDirection.z = moveZ * speed;
 
+        
         
 
         moveDirection = transform.TransformDirection(moveDirection);
@@ -78,18 +82,35 @@ public class moveemnt : MonoBehaviour
 
     void sprint()
     {
-        if (Input.GetButtonDown("Sprint"))
+        if (sprinting && sprintTime >= 0){
+            sprintTime--;
+        } else if (sprintTime != maxSprintTime){
+            speed = lastSpeed;
+            sprinting = false;
+        }
+
+        if (sprintTime <= 0){
+            Invoke("resetSprintTime", 3);
+        }
+
+        if (Input.GetButtonDown("Sprint") && sprintTime >= 0)
         {
-            
+            print("sprint");
+            sprinting = true;
             lastSpeed = speed;
             speed = sprintSpeed;
         }
         else if (Input.GetButtonUp("Sprint"))
         {
-            
+            sprinting = false;
             speed = lastSpeed;
+            
         }
         
+    }
+
+    void resetSprintTime(){
+        sprintTime = maxSprintTime;
     }
 
     void gravity()

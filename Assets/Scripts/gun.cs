@@ -1,3 +1,4 @@
+// using System.Numerics;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,7 @@ using UnityEngine.UI;
 public class gun : MonoBehaviour
 {
 
-
+    public ParticleSystem ps;
     public Animator animController;
     float currentTime = 0f;
     float timeToMove = .5f;
@@ -24,8 +25,6 @@ public class gun : MonoBehaviour
     [SerializeField] GameObject player;
     GameObject bullet;
     [SerializeField] GameObject shootPoint;
-    Vector3 startPosition;
-    Vector3 lowerPosition;
     // Start is called before the first frame update
 
 
@@ -39,10 +38,8 @@ public class gun : MonoBehaviour
     }
     void Start()
     {
-        startPosition = transform.localPosition;
         maxMag = mag;
         bullet = Resources.Load("bullet") as GameObject;
-        lowerPosition = transform.localPosition - new Vector3(0, 1, 0);
 
     }
 
@@ -70,9 +67,9 @@ public class gun : MonoBehaviour
             if (!reload && readyToShoot && mag > 0)
             {
                 readyToShoot = false;
+                Flash();
                 GameObject newBullet = Instantiate(bullet, shootPoint.transform.position, shootPoint.transform.rotation);
                 mag--;
-
                 bulletCode bulletScript = newBullet.GetComponent<bulletCode>();
                 bulletScript.Init(player, shootPoint);
                 Destroy(newBullet, 10f);
@@ -82,25 +79,11 @@ public class gun : MonoBehaviour
         }
     }
 
-    void reloadAnim()
-    {
-        if (canReloadAnim)
-        {
-            if (currentTime <= timeToMove)
-            {
-                currentTime += Time.deltaTime;
-                
-                transform.localPosition = Vector3.Lerp(startPosition, lowerPosition, currentTime / timeToMove);
-                
-            }
-            else
-            {
-                canReloadAnim = false;
-            }
-            
-        }
-        
+    void Flash(){
+
+        // ParticleSystem flash = Instantiate(ps, shootPoint.transform.position, shootPoint.transform.rotation);
     }
+
 
     void reloadCheck()
     {
