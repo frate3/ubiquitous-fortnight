@@ -5,6 +5,8 @@ using UnityEngine;
 public class moveemnt : MonoBehaviour
 {
 
+    [Header("Positioning")]
+    [Header("Changeble Values")]
     Vector3 direction;
     float lastSpeed;
     [SerializeField] GameObject touchGround;
@@ -20,6 +22,9 @@ public class moveemnt : MonoBehaviour
     float camX;
     float camY;
     float sprintSpeed = 12f;
+    public ProgressBar pb;
+    public float health = 100;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +42,7 @@ public class moveemnt : MonoBehaviour
         cameraMove();
         gravity();
         sprint();
-        
+        pb.BarValue = health; 
         
 
         moveDirection.x = moveX * speed;
@@ -118,4 +123,6 @@ public class moveemnt : MonoBehaviour
             camY -= Input.GetAxis("Mouse Y") * camSpeed;
         }
     }
+
+    //clamp health at 100;
 }
