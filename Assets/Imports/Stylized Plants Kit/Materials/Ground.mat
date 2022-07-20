@@ -203,7 +203,6 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    m_Ints: []
     m_Floats:
     - Vector1_5abe30072de84ef09400ead2f29382c2: 3
     - Vector1_89044d087a2b4ea481e5f81ea6cb7a5e: 0.2
@@ -217,10 +216,10 @@ Material:
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
-    - _CliffNormalStrengh: 1
-    - _CliffNormalStrengh_1: 3.32
-    - _CliffNormalStrengh_2: -1.73
-    - _CliffNormalStrengh_3: 2.91
+    - _CliffNormalStrengh: 2.96
+    - _CliffNormalStrengh_1: 1.8
+    - _CliffNormalStrengh_2: 0.37
+    - _CliffNormalStrengh_3: -0.22
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1

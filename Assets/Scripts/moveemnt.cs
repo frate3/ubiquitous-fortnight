@@ -51,12 +51,13 @@ public class moveemnt : MonoBehaviour
         cameraMove();
         gravity();
         sprint();
-        pb.BarValue = health;
-        spb.BarValue = sprintTime / 5;
-
-        pb.BarValue = health;
-        spb.BarValue = sprintTime;
-
+        if (pb != null){
+            pb.BarValue = health; 
+        }
+        if (spb != null){
+            spb.BarValue = sprintTime / 5;
+        }
+       
 
         moveDirection.x = moveX * speed;
         moveDirection.z = moveZ * speed;
