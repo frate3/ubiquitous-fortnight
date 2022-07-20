@@ -15,7 +15,7 @@ public class moveemnt : MonoBehaviour
     public ProgressBar pb;
     public ProgressBar spb;
     public float health = 100;
-    public float sprintTime;
+    public float sprintTime = 500;
     public float jumpHeight = 5f;
     public float camSpeed = 4f;
     CharacterController cc;
@@ -28,10 +28,6 @@ public class moveemnt : MonoBehaviour
     float camX;
     float camY;
     float sprintSpeed = 12f;
-    public ProgressBar pb;
-    public ProgressBar spb;
-    public float health = 100;
-    public float sprintTime = 500;
     float maxSprintTime;
     public bool sprinting = false;
     float slowSpeed = 4f;
@@ -55,20 +51,15 @@ public class moveemnt : MonoBehaviour
         cameraMove();
         gravity();
         sprint();
-        pb.BarValue = health; 
+        pb.BarValue = health;
         spb.BarValue = sprintTime / 5;
-        
+
         pb.BarValue = health;
         spb.BarValue = sprintTime;
 
 
         moveDirection.x = moveX * speed;
         moveDirection.z = moveZ * speed;
-
-        
-        
-
-
 
         moveDirection = transform.TransformDirection(moveDirection);
 
@@ -90,14 +81,18 @@ public class moveemnt : MonoBehaviour
 
     void sprint()
     {
-        if (sprinting && sprintTime >= 0){
+        if (sprinting && sprintTime >= 0)
+        {
             sprintTime--;
-        } else if (sprintTime != maxSprintTime){
+        }
+        else if (sprintTime != maxSprintTime)
+        {
             speed = lastSpeed;
             sprinting = false;
         }
 
-        if (sprintTime <= 0){
+        if (sprintTime <= 0)
+        {
             Invoke("resetSprintTime", 3);
         }
 
@@ -113,18 +108,19 @@ public class moveemnt : MonoBehaviour
         {
             sprinting = false;
             speed = lastSpeed;
-            
+
         }
-        
+
     }
 
-    void resetSprintTime(){
+    void resetSprintTime()
+    {
         sprintTime = maxSprintTime;
 
-            speed = lastSpeed;
-        }
-
+        speed = lastSpeed;
     }
+
+
 
     void gravity()
     {
