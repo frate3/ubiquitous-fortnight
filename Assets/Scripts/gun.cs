@@ -17,7 +17,7 @@ public class gun : MonoBehaviour
     /*public float bulletsFired;*/
     float mag = 40;
     float maxMag;
-    float timeBetweenReload = 2.8f;
+    float timeBetweenReload = 2.5f;
     public bool reload = false;
     float timeBetweenShoot = 0.2f;
     public bool readyToShoot = true;
@@ -34,7 +34,7 @@ public class gun : MonoBehaviour
     }
     private void Awake()
     {
-        animController = GetComponent<Animator>();
+        //animController = GetComponent<Animator>();
     }
     void Start()
     {
