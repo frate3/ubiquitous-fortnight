@@ -11,9 +11,9 @@ public class Spawning : MonoBehaviour
     bool spawning = false;
     public GameObject enemy;
     public Transform spawnerSpot;
+
+
     
-
-
     private void OnTriggerEnter(Collider col){
         if (!spawning){
             spawning = true;
@@ -24,18 +24,26 @@ public class Spawning : MonoBehaviour
     private void Spawn(){
         float spawnAmount = SpawnNum();
         
-        for (int i=0; i<spawnAmount; i++){
-            GameObject newEnemy = Instantiate(enemy, spawnerSpot);
+        for (int i=0; i < spawnAmount; i++){
+            GameObject newEnemy = Instantiate(enemy, randomVector3(spawnerSpot), Quaternion.identity);
         }
         
         
     }
 
-    public float SpawnNum(){
-        return Random.Range(5,10); //add more factors later
-    } 
-
+    public float SpawnNum()
+    {
+        return Random.Range(5, 10); //add more factors later
+    }
     
+    Vector3 randomVector3 (Transform host)
+    {
+        Vector3 basePosition = host.position;
+        float offsetX = Random.Range(-10, 10);
+        float offsetZ = Random.Range(-10, 10);
+        basePosition += new Vector3(offsetX, 0, offsetZ);
+        return basePosition;
 
+    }
     
 }
