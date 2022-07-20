@@ -25,7 +25,7 @@ public class Spawning : MonoBehaviour
         float spawnAmount = SpawnNum();
         
         for (int i=0; i < spawnAmount; i++){
-            GameObject newEnemy = Instantiate(enemy, randomVector3(spawnerSpot), Quaternion.identity);
+            GameObject newEnemy = Instantiate(enemy, randomVector3(spawnerSpot, -10, 10), Quaternion.identity);
         }
         
         
@@ -36,11 +36,11 @@ public class Spawning : MonoBehaviour
         return Random.Range(5, 10); //add more factors later
     }
     
-    Vector3 randomVector3 (Transform host)
+    Vector3 randomVector3 (Transform host, float min, float max)
     {
         Vector3 basePosition = host.position;
-        float offsetX = Random.Range(-10, 10);
-        float offsetZ = Random.Range(-10, 10);
+        float offsetX = Random.Range(min, max);
+        float offsetZ = Random.Range(min, max);
         basePosition += new Vector3(offsetX, 0, offsetZ);
         return basePosition;
 

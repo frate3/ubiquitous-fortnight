@@ -5,6 +5,7 @@ using UnityEngine;
 public class gunController : MonoBehaviour
 {
     [SerializeField] gun instance;
+    [SerializeField] pistolScript instance1;
     [SerializeField] GameObject pistol;
     [SerializeField] GameObject assaultRifle;
     [SerializeField] int mouse;
@@ -32,7 +33,7 @@ public class gunController : MonoBehaviour
     void switchWeapon (int num)
     {
 
-        if (!instance.reload)
+        if (!instance.reload && !instance1.reload)
         {
             for (int i = 0; i < gunlist.Count; i++)
             {

@@ -16,7 +16,7 @@ public class pistolScript : MonoBehaviour
     /*public float bulletsFired;*/
     float mag = 12;
     float maxMag;
-    float timeBetweenReload = 2.8f;
+    float timeBetweenReload = 2.5f;
     public bool reload = false;
     float timeBetweenShoot = 0.1f;
     public bool readyToShoot = true;
@@ -29,13 +29,10 @@ public class pistolScript : MonoBehaviour
     // Start is called before the first frame update
 
 
-    void scrollingGuns()
-    {
-
-    }
+    
     private void Awake()
     {
-        animController = GetComponent<Animator>();
+        //animController = GetComponent<Animator>();
     }
     void Start()
     {
@@ -60,7 +57,7 @@ public class pistolScript : MonoBehaviour
     {
         if (mag < 40 && Input.GetKeyDown(KeyCode.R))
         {
-            animController.SetBool("reload", true);
+            animController.SetBool("canReload", true);
             reload = true;
             Invoke("reloadCheck", timeBetweenReload);
         }
@@ -104,7 +101,7 @@ public class pistolScript : MonoBehaviour
 
     void reloadCheck()
     {
-        animController.SetBool("reload", false);
+        animController.SetBool("canReload", false);
         reload = false;
         mag = maxMag;
     }

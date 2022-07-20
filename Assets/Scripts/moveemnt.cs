@@ -5,27 +5,32 @@ using UnityEngine;
 public class moveemnt : MonoBehaviour
 {
 
-    [Header("Positioning")]
-    [Header("Changeble Values")]
+
     Vector3 direction;
-    float lastSpeed;
-    [SerializeField] GameObject touchGround;
-    bool grounded;
-    float speed = 8f;
-    public float jumpHeight = 5f;
-    public float camSpeed = 4f;
-    CharacterController cc;
-    float moveX;
-    float moveZ;
     Vector3 moveDirection = Vector3.zero;
+
+    [Header("Changeble Values")]
+    [SerializeField] GameObject touchGround;
     [SerializeField] Camera cam;
-    float camX;
-    float camY;
-    float sprintSpeed = 12f;
     public ProgressBar pb;
     public ProgressBar spb;
     public float health = 100;
     public float sprintTime;
+    public float jumpHeight = 5f;
+    public float camSpeed = 4f;
+    CharacterController cc;
+
+    float lastSpeed;
+    bool grounded;
+    float speed = 8f;
+    float moveX;
+    float moveZ;
+    float camX;
+    float camY;
+    float sprintSpeed = 12f;
+    float slowSpeed = 4f;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -44,14 +49,14 @@ public class moveemnt : MonoBehaviour
         cameraMove();
         gravity();
         sprint();
-        pb.BarValue = health; 
+        pb.BarValue = health;
         spb.BarValue = sprintTime;
-        
+
 
         moveDirection.x = moveX * speed;
         moveDirection.z = moveZ * speed;
 
-        
+
 
         moveDirection = transform.TransformDirection(moveDirection);
 
@@ -68,28 +73,22 @@ public class moveemnt : MonoBehaviour
             direction = moveDirection;
         }
 
-        //if (!grounded)
-        //{
-        //    moveDirection.x = direction.x;
-        //    moveDirection.z = direction.z;
-            
-        //}
+
     }
 
     void sprint()
     {
         if (Input.GetButtonDown("Sprint"))
         {
-            
-            lastSpeed = speed;
+
             speed = sprintSpeed;
         }
         else if (Input.GetButtonUp("Sprint"))
         {
-            
+
             speed = lastSpeed;
         }
-        
+
     }
 
     void gravity()
@@ -97,6 +96,11 @@ public class moveemnt : MonoBehaviour
         if (!grounded)
         {
             moveDirection.y += Physics.gravity.y * Time.deltaTime;
+            speed = slowSpeed;
+        }
+        else
+        {
+            speed = lastSpeed;
         }
     }
 
@@ -105,26 +109,23 @@ public class moveemnt : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, camX, 0);
 
         camY = Mathf.Clamp(camY, -90, 90);
-        cam.transform.localRotation =  Quaternion.Euler(camY, 0, 0);
+        cam.transform.localRotation = Quaternion.Euler(camY, 0, 0);
     }
 
-    
+
     void ground()
     {
         grounded = Physics.Raycast(touchGround.transform.position, -transform.up, 0.1f, LayerMask.GetMask("ground"));
     }
     void Inputs()
     {
-        {
-            if (grounded)
-            {
-                moveX = Input.GetAxisRaw("Horizontal");
-                moveZ = Input.GetAxisRaw("Vertical");
-            }
-            
-            camX += Input.GetAxis("Mouse X") * camSpeed;
-            camY -= Input.GetAxis("Mouse Y") * camSpeed;
-        }
+
+        moveX = Input.GetAxisRaw("Horizontal");
+        moveZ = Input.GetAxisRaw("Vertical");
+
+        camX += Input.GetAxis("Mouse X") * camSpeed;
+        camY -= Input.GetAxis("Mouse Y") * camSpeed;
+
     }
 
     //clamp health at 100;
