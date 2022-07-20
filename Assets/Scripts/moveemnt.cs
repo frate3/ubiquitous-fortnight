@@ -28,6 +28,12 @@ public class moveemnt : MonoBehaviour
     float camX;
     float camY;
     float sprintSpeed = 12f;
+    public ProgressBar pb;
+    public ProgressBar spb;
+    public float health = 100;
+    public float sprintTime = 500;
+    float maxSprintTime;
+    public bool sprinting = false;
     float slowSpeed = 4f;
 
 
@@ -49,12 +55,18 @@ public class moveemnt : MonoBehaviour
         cameraMove();
         gravity();
         sprint();
+        pb.BarValue = health; 
+        spb.BarValue = sprintTime / 5;
+        
         pb.BarValue = health;
         spb.BarValue = sprintTime;
 
 
         moveDirection.x = moveX * speed;
         moveDirection.z = moveZ * speed;
+
+        
+        
 
 
 
@@ -78,13 +90,36 @@ public class moveemnt : MonoBehaviour
 
     void sprint()
     {
-        if (Input.GetButtonDown("Sprint"))
+        if (sprinting && sprintTime >= 0){
+            sprintTime--;
+        } else if (sprintTime != maxSprintTime){
+            speed = lastSpeed;
+            sprinting = false;
+        }
+
+        if (sprintTime <= 0){
+            Invoke("resetSprintTime", 3);
+        }
+
+        if (Input.GetButtonDown("Sprint") && sprintTime >= 0)
         {
+            print("sprint");
+            sprinting = true;
+            lastSpeed = speed;
 
             speed = sprintSpeed;
         }
         else if (Input.GetButtonUp("Sprint"))
         {
+            sprinting = false;
+            speed = lastSpeed;
+            
+        }
+        
+    }
+
+    void resetSprintTime(){
+        sprintTime = maxSprintTime;
 
             speed = lastSpeed;
         }
