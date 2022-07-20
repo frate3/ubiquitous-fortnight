@@ -31,12 +31,12 @@ public class bulletCode : MonoBehaviour
 
             if (hit.collider != null)
             {
-                print(hit.collider);
+                
                 direction = hit.point - gun.transform.position;
             }
             else
             {
-                print("it is definitely null");
+                
                 direction = r.GetPoint(50) - gun.transform.position;
             }
 

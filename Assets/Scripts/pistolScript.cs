@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class gun : MonoBehaviour
+public class pistolScript : MonoBehaviour
 {
 
 
@@ -29,7 +29,7 @@ public class gun : MonoBehaviour
     // Start is called before the first frame update
 
 
-    void scrollingGuns ()
+    void scrollingGuns()
     {
 
     }
@@ -51,7 +51,7 @@ public class gun : MonoBehaviour
     {
         ammoCounter.text = mag.ToString("0");
         fire();
-        //reloadAnim();
+        
 
 
     }
@@ -89,17 +89,17 @@ public class gun : MonoBehaviour
             if (currentTime <= timeToMove)
             {
                 currentTime += Time.deltaTime;
-                
+
                 transform.localPosition = Vector3.Lerp(startPosition, lowerPosition, currentTime / timeToMove);
-                
+
             }
             else
             {
                 canReloadAnim = false;
             }
-            
+
         }
-        
+
     }
 
     void reloadCheck()
