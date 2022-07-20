@@ -23,7 +23,9 @@ public class moveemnt : MonoBehaviour
     float camY;
     float sprintSpeed = 12f;
     public ProgressBar pb;
+    public ProgressBar spb;
     public float health = 100;
+    public float sprintTime;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +45,7 @@ public class moveemnt : MonoBehaviour
         gravity();
         sprint();
         pb.BarValue = health; 
+        spb.BarValue = sprintTime;
         
 
         moveDirection.x = moveX * speed;
