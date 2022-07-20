@@ -14,11 +14,11 @@ public class pistolScript : MonoBehaviour
     [SerializeField] Text ammoCounter;
     float bulletsLeft;
     /*public float bulletsFired;*/
-    float mag = 40;
+    float mag = 12;
     float maxMag;
     float timeBetweenReload = 2.8f;
     public bool reload = false;
-    float timeBetweenShoot = 0.2f;
+    float timeBetweenShoot = 0.1f;
     public bool readyToShoot = true;
     [SerializeField] GameObject crosshair;
     [SerializeField] GameObject player;
@@ -64,7 +64,7 @@ public class pistolScript : MonoBehaviour
             reload = true;
             Invoke("reloadCheck", timeBetweenReload);
         }
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
 
             if (!reload && readyToShoot && mag > 0)
