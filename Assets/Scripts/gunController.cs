@@ -9,10 +9,13 @@ public class gunController : MonoBehaviour
     [SerializeField] GameObject assaultRifle;
     [SerializeField] int mouse;
     List<GameObject> gunlist = new List<GameObject>();
+    int startingWeapon = 1;
+    GameObject currentWeapon;
     // Start is called before the first frame update
     void Start()
     {
         addGuns();
+        mouse = startingWeapon;
     }
 
     // Update is called once per frame
@@ -37,6 +40,7 @@ public class gunController : MonoBehaviour
                 {
                     Debug.Log("true");
                     gunlist[i].SetActive(true);
+                    currentWeapon = gunlist[i];
                 }
                 else
                 {
