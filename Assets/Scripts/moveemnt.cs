@@ -14,7 +14,7 @@ public class moveemnt : MonoBehaviour
     [SerializeField] Camera cam;
     public ProgressBar pb;
     public ProgressBar spb;
-    public float health = 100;
+    public static float health = 100;
     public float sprintTime = 500;
     public float jumpHeight = 5f;
     public float camSpeed = 4f;
@@ -162,4 +162,8 @@ public class moveemnt : MonoBehaviour
     }
 
     //clamp health at 100;
+
+    public static void TakeDamage(){
+        health--;
+    }
 }

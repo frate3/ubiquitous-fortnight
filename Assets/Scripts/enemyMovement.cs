@@ -51,7 +51,7 @@ public class enemyMovement : MonoBehaviour
     }
 
     void Check(){
-        
+
 
         if (count >= 5){
             animator.SetBool("Dead", true);
