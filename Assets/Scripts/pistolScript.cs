@@ -79,6 +79,7 @@ public class pistolScript : MonoBehaviour
         }
     }
 
+
     void reloadAnim()
     {
         if (canReloadAnim)

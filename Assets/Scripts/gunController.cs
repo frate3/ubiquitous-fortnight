@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class gunController : MonoBehaviour
 {
+    bool canSwitch = true;
     [SerializeField] gun instance;
     [SerializeField] pistolScript instance1;
     [SerializeField] GameObject pistol;
@@ -12,25 +13,27 @@ public class gunController : MonoBehaviour
     List<GameObject> gunlist = new List<GameObject>();
     int startingWeapon = 1;
     GameObject currentWeapon;
+    float timeForSwitch = 2;
     // Start is called before the first frame update
     void Start()
     {
         addGuns();
         mouse = startingWeapon;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
         inputGetter();
-        switchWeapon(mouse);
-        Debug.Log(gunlist.Count);
-        
-        
+        switchWeapon();
+
+
     }
 
-    void switchWeapon (int num)
+    void switchWeapon()
+
     {
 
         if (!instance.reload && !instance1.reload)
@@ -42,23 +45,33 @@ public class gunController : MonoBehaviour
                     Debug.Log("true");
                     gunlist[i].SetActive(true);
                     currentWeapon = gunlist[i];
+                    
                 }
                 else
                 {
                     Debug.Log("false");
-                    gunlist[i].SetActive(false);
+                    if (gunlist[i].activeSelf)
+                    {
+                        Debug.Log("i need to know");
+                        gunlist[i].GetComponent<Animator>().SetBool("switching", true);
+                        gunlist[i].SetActive(false);
+                    }
 
                 }
             }
         }
     }
 
-    void addGuns ()
+
+
+
+
+    void addGuns()
     {
         gunlist.Add(pistol);
         gunlist.Add(assaultRifle);
 
-        
+
 
     }
 
