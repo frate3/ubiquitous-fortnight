@@ -6,7 +6,7 @@ public class bulletCode : MonoBehaviour
 {
     RaycastHit hit;
     Rigidbody rb;
-    float force = 15f;
+    float force = 20f;
     GameObject player;
     public GameObject hole;
     // Start is called before the first frame update
