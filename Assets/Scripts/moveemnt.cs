@@ -5,7 +5,7 @@ using UnityEngine;
 public class moveemnt : MonoBehaviour
 {
 
-
+    RaycastHit hit;
     Vector3 direction;
     Vector3 moveDirection = Vector3.zero;
 
@@ -52,13 +52,15 @@ public class moveemnt : MonoBehaviour
         cameraMove();
         gravity();
         sprint();
-        if (pb != null){
-            pb.BarValue = health; 
+        if (pb != null)
+        {
+            pb.BarValue = health;
         }
-        if (spb != null){
+        if (spb != null)
+        {
             spb.BarValue = sprintTime / 5;
         }
-       
+
 
         moveDirection.x = moveX * speed;
         moveDirection.z = moveZ * speed;
@@ -66,6 +68,8 @@ public class moveemnt : MonoBehaviour
         moveDirection = transform.TransformDirection(moveDirection);
 
         jump();
+
+        Debug.Log(speed);
 
         cc.Move(moveDirection * Time.deltaTime);
     }
@@ -148,7 +152,15 @@ public class moveemnt : MonoBehaviour
 
     void ground()
     {
-        grounded = Physics.Raycast(touchGround.transform.position, -transform.up, 0.1f, LayerMask.GetMask("ground"));
+        if (Physics.OverlapSphere(touchGround.transform.position, 0.5f, LayerMask.GetMask("ground")).Length != 0)
+        {
+            grounded = true;
+        }
+        else
+        {
+            grounded = false;
+        }
+        Debug.Log(grounded);
     }
     void Inputs()
     {
