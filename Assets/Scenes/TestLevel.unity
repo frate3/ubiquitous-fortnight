@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.094257034, g: 0.11950519, b: 0.15506512, a: 1}
+  m_IndirectSpecularColor: {r: 0.0942541, g: 0.1195026, b: 0.15506229, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20540
+  m_Name: pb_Mesh19748
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -333,7 +333,8 @@ GameObject:
   - component: {fileID: 108393951}
   - component: {fileID: 108393953}
   - component: {fileID: 108393952}
-  m_Layer: 0
+  - component: {fileID: 108393954}
+  m_Layer: 6
   m_Name: Spawning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -382,13 +383,25 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 14.152797
   m_Center: {x: -9.35, y: 13.05, z: -3.62}
+--- !u!114 &108393954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108393950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 546e367d8837740268fd6474fa6a8066, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &214307415
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20372
+  m_Name: pb_Mesh19578
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2410,7 +2423,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20454
+  m_Name: pb_Mesh19660
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2729,7 +2742,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20432
+  m_Name: pb_Mesh19638
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3350,8 +3363,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64a44f5a55824174f99c55d54b3442c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Grenade: {fileID: 100000, guid: 8e9d67f4414dafb4a830faee4d4afe7c, type: 3}
+  Grenade: {fileID: 7904360026354757820, guid: 80190906bb89947f799ad591954757fc, type: 3}
   shootPoint: {fileID: 328277942}
+  explosion: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
+  whatIsEnemies:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &1928301960
 GameObject:
   m_ObjectHideFlags: 0
@@ -3780,7 +3797,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh21400
+  m_Name: pb_Mesh19626
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4601,7 +4618,7 @@ GameObject:
   - component: {fileID: 3557242418001391910}
   - component: {fileID: 1637386566680462828}
   - component: {fileID: 4552038227830974990}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: redRock Variant (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4620,7 +4637,7 @@ GameObject:
   - component: {fileID: 3557242417954926834}
   - component: {fileID: 1637386566298453048}
   - component: {fileID: 4552038228187032538}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: redRock Variant (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4639,7 +4656,7 @@ GameObject:
   - component: {fileID: 3557242417747060418}
   - component: {fileID: 1637386566426104328}
   - component: {fileID: 4552038228084030954}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: redRock Variant (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4658,7 +4675,7 @@ GameObject:
   - component: {fileID: 3557242417162675878}
   - component: {fileID: 1637386567653659244}
   - component: {fileID: 4552038229005532558}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: redRock Variant (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4677,7 +4694,7 @@ GameObject:
   - component: {fileID: 3557242417011318773}
   - component: {fileID: 1637386567837920063}
   - component: {fileID: 4552038228820542685}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: redRock Variant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4696,7 +4713,7 @@ GameObject:
   - component: {fileID: 3557242416724037923}
   - component: {fileID: 1637386567550576105}
   - component: {fileID: 4552038229107821067}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: redRock Variant (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4715,7 +4732,7 @@ GameObject:
   - component: {fileID: 3557242417617289570}
   - component: {fileID: 1637386567034549672}
   - component: {fileID: 4552038229598427722}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: redRock Variant (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4734,7 +4751,7 @@ GameObject:
   - component: {fileID: 3557242417223908952}
   - component: {fileID: 1637386566907579026}
   - component: {fileID: 4552038229739873648}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: redRock Variant (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4752,7 +4769,7 @@ GameObject:
   - component: {fileID: 1730651685439104640}
   - component: {fileID: 3434937120186722597}
   - component: {fileID: 598888957448068591}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WaterPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4770,7 +4787,7 @@ GameObject:
   - component: {fileID: 1730651685303282180}
   - component: {fileID: 3434937120049980833}
   - component: {fileID: 598888957579694443}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4788,7 +4805,7 @@ GameObject:
   - component: {fileID: 1730651685164936467}
   - component: {fileID: 3434937119911502518}
   - component: {fileID: 598888957172782716}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5175,7 +5192,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2273820783660868455}
   - component: {fileID: 2273820783660868454}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TerrainGroup_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5217,7 +5234,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2273820784921683403}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spiders Nest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5320,7 +5337,7 @@ GameObject:
   - component: {fileID: 2273820785121553272}
   - component: {fileID: 2273820785121553274}
   - component: {fileID: 2273820785121553273}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Terrain_0_0_15aee011-809b-474c-8d46-fc505dfe3208
   m_TagString: Untagged
   m_Icon: {fileID: 0}
