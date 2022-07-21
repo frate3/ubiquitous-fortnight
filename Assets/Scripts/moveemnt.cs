@@ -37,6 +37,7 @@ public class moveemnt : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        maxSprintTime = sprintTime;
         lastSpeed = speed;
         cc = GetComponent<CharacterController>();
         Cursor.visible = false;
