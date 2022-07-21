@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GrenadeThrow : MonoBehaviour
 {
@@ -11,13 +12,23 @@ public class GrenadeThrow : MonoBehaviour
     public LayerMask whatIsEnemies;
     GameObject newGrenade;
     public Rigidbody rb;
+    float grenadeCoolDown;
+    float grenadeCoolDownMax = 720;
 
+    void Start(){
+        grenadeCoolDown = grenadeCoolDownMax;
+
+    }
 
     void Update(){
-        if (Input.GetButtonDown("Throw")){
+
+        if (Input.GetButtonDown("Throw") && grenadeCoolDown < 0){
+            grenadeCoolDown = grenadeCoolDownMax;
             newGrenade = Instantiate(Grenade, shootPoint.transform.position, shootPoint.transform.rotation);
             Invoke("Explode",3f);
             Destroy(newGrenade, 3f);
+        } else {
+            grenadeCoolDown--;
         }
     }
 
