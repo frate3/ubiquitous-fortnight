@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class moveemnt : MonoBehaviour
 {
@@ -31,6 +32,7 @@ public class moveemnt : MonoBehaviour
     float maxSprintTime;
     public bool sprinting = false;
     float slowSpeed = 4f;
+    float noMoveTime;
 
 
 
@@ -58,7 +60,16 @@ public class moveemnt : MonoBehaviour
         if (spb != null){
             spb.BarValue = sprintTime / 5;
         }
-       
+
+
+        if (!sprinting){
+            noMoveTime++;
+        }
+
+        if (health < 0){
+            // SceneManager.LoadScene("TestScene");
+            //do death things
+        }
 
         moveDirection.x = moveX * speed;
         moveDirection.z = moveZ * speed;
@@ -93,14 +104,15 @@ public class moveemnt : MonoBehaviour
             sprinting = false;
         }
 
-        if (sprintTime <= 0)
+        if (sprintTime <= 0 || noMoveTime > 300)
         {
+            noMoveTime = 0;
             Invoke("resetSprintTime", 3);
         }
 
         if (Input.GetButtonDown("Sprint") && sprintTime >= 0)
         {
-            print("sprint");
+            noMoveTime = 0;
             sprinting = true;
             lastSpeed = speed;
 
@@ -160,8 +172,6 @@ public class moveemnt : MonoBehaviour
         camY -= Input.GetAxis("Mouse Y") * camSpeed;
 
     }
-
-    //clamp health at 100;
 
     public static void TakeDamage(){
         health--;
