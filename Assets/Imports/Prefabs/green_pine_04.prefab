@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4451478145777210322}
   - component: {fileID: 8854276608736234049}
   - component: {fileID: 5139125773577357451}
-  - component: {fileID: 3840745942414643462}
   m_Layer: 0
   m_Name: green_pine_04
   m_TagString: Untagged
@@ -56,6 +55,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -80,16 +80,4 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &3840745942414643462
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1848621397809533839}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.2342415, y: 4.5018682, z: 2.1248899}
-  m_Center: {x: 0, y: 2.2509341, z: 0}
+  m_AdditionalVertexStreams: {fileID: 0}
