@@ -5920,6 +5920,7 @@ MonoBehaviour:
   jumpHeight: 5
   camSpeed: 4
   sprinting: 0
+  flashlight: {fileID: 2073846466}
 --- !u!143 &695828211
 CharacterController:
   m_ObjectHideFlags: 0
