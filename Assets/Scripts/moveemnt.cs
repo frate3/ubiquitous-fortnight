@@ -36,6 +36,8 @@ public class moveemnt : MonoBehaviour
     float noMoveTime;
     bool inWater  = false;
     bool allowSprint;
+    bool flashState = true;
+    public GameObject flashlight;
 
 
 
@@ -46,6 +48,7 @@ public class moveemnt : MonoBehaviour
         maxSprintTime = sprintTime;
         lastSpeed = speed;
         cc = GetComponent<CharacterController>();
+        flashlight.SetActive(true);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -58,6 +61,7 @@ public class moveemnt : MonoBehaviour
         gravity();
         sprint();
         Terrain();
+        Flash();
         if (pb != null)
         {
             pb.BarValue = health;
@@ -74,6 +78,7 @@ public class moveemnt : MonoBehaviour
         }
 
         if (health < 0){
+            Death();
             // SceneManager.LoadScene("TestScene");
             //do death things
         }
@@ -97,6 +102,19 @@ public class moveemnt : MonoBehaviour
         }
 
 
+    }
+
+    void Flash(){
+        if (Input.GetButtonDown("FlashToggle")){
+            if (flashState){
+                flashlight.SetActive(false);
+                flashState = false;
+            } else {
+                flashlight.SetActive(true);
+                flashState = true;
+            }
+            
+        }
     }
 
     void sprint()
@@ -198,15 +216,25 @@ public class moveemnt : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider other)
     {
-        if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Water"))
+        print(other);
+        if (other.gameObject.layer == LayerMask.NameToLayer("Water"))
         {
+            print("in Water");
             inWater = true;
         } else
         {
             inWater = false;
         }
+        if (other.gameObject.layer == LayerMask.NameToLayer("Lava")){
+            Death();
+        }
+    }
+
+    void Death(){
+        print("death");
+        //kill player and do other death things
     }
 
 
