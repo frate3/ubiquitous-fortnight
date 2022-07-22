@@ -222,6 +222,8 @@ public class moveemnt : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Water"))
         {
             print("in Water");
+            flashlight.SetActive(false);
+            flashState = false;
             inWater = true;
         } else
         {
@@ -231,6 +233,7 @@ public class moveemnt : MonoBehaviour
             Death();
         }
     }
+
 
     void Death(){
         print("death");
