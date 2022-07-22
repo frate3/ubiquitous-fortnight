@@ -26,7 +26,7 @@ public class enemyMovement : MonoBehaviour
     void Update()
     {
         Check();
-        /*print("count" + count);*/
+
         if (walking){
             animator.SetBool("Walking", true);
             agent.destination = player.transform.position;
