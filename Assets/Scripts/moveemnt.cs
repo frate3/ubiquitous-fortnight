@@ -74,6 +74,7 @@ public class moveemnt : MonoBehaviour
         }
 
         if (health < 0){
+            Death();
             // SceneManager.LoadScene("TestScene");
             //do death things
         }
@@ -198,15 +199,25 @@ public class moveemnt : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider other)
     {
-        if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Water"))
+        print(other);
+        if (other.gameObject.layer == LayerMask.NameToLayer("Water"))
         {
+            print("in Water");
             inWater = true;
         } else
         {
             inWater = false;
         }
+        if (other.gameObject.layer == LayerMask.NameToLayer("Lava")){
+            Death();
+        }
+    }
+
+    void Death(){
+        print("death");
+        //kill player and do other death things
     }
 
 
