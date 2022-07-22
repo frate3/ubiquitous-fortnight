@@ -22,7 +22,7 @@ public class gunController : MonoBehaviour
         for (int i = 0; i < gunlist.Count; i++)
         {
             gunlist[i].SetActive(false);
-            Debug.Log(gunlist);
+            //Debug.Log(gunlist);
         }
         mouse = startingWeapon;
     }
@@ -30,10 +30,11 @@ public class gunController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        print(mouse);
+        print(lastMouse);
         inputGetter();
         weaponChange();
-        Debug.Log(canSwitch);
+        //Debug.Log(canSwitch);
 
 
     }
@@ -57,6 +58,7 @@ public class gunController : MonoBehaviour
                     }
                     if (mouse != lastMouse)
                     {
+                        
                         canSwitch = false;
                         Invoke("reset", timeForSwitch);
                     }
