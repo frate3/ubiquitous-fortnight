@@ -51,8 +51,7 @@ public class moveemnt : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update(){
         ground();
         Inputs();
         cameraMove();
