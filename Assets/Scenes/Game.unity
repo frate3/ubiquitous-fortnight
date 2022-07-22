@@ -11925,7 +11925,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 1565208878}
-  spawnerSpot: {fileID: 0}
+  spawnerSpot: {fileID: 1347085818}
 --- !u!135 &1528469744
 SphereCollider:
   m_ObjectHideFlags: 0
