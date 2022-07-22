@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4179016830502992220}
   - component: {fileID: 4882546718671245060}
   - component: {fileID: 544347173696812590}
-  - component: {fileID: 5778573863948437749}
   m_Layer: 0
   m_Name: dead_tree_02
   m_TagString: Untagged
@@ -56,6 +55,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -80,16 +80,4 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &5778573863948437749
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4324339479652562936}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.5701134, y: 3.9194257, z: 0.65087163}
-  m_Center: {x: 0.08505672, y: 1.9597129, z: -0.12543581}
+  m_AdditionalVertexStreams: {fileID: 0}
