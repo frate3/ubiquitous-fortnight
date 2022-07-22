@@ -54,6 +54,7 @@ public class moveemnt : MonoBehaviour
         cameraMove();
         gravity();
         sprint();
+        Terrain();
         if (pb != null)
         {
             pb.BarValue = health;
@@ -80,8 +81,6 @@ public class moveemnt : MonoBehaviour
         moveDirection = transform.TransformDirection(moveDirection);
 
         jump();
-
-        Debug.Log(speed);
 
         cc.Move(moveDirection * Time.deltaTime);
     }
@@ -173,7 +172,6 @@ public class moveemnt : MonoBehaviour
         {
             grounded = false;
         }
-        Debug.Log(grounded);
     }
     void Inputs()
     {
