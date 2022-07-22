@@ -33,6 +33,8 @@ public class moveemnt : MonoBehaviour
     public bool sprinting = false;
     float slowSpeed = 4f;
     float noMoveTime;
+    bool inWater  = false;
+    bool allowSprint;
 
 
 
@@ -114,7 +116,7 @@ public class moveemnt : MonoBehaviour
             Invoke("resetSprintTime", 3);
         }
 
-        if (Input.GetButtonDown("Sprint") && sprintTime >= 0)
+        if (Input.GetButtonDown("Sprint") && sprintTime >= 0 && allowSprint)
         {
             noMoveTime = 0;
             sprinting = true;
@@ -184,7 +186,31 @@ public class moveemnt : MonoBehaviour
 
     }
 
-    public static void TakeDamage(){
+
+    void Terrain()
+    {
+        if (inWater)
+        {
+            allowSprint = false;
+            speed = slowSpeed;
+        }
+    }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Water"))
+        {
+            inWater = true;
+        } else
+        {
+            inWater = false;
+        }
+    }
+
+
+    public static void TakeDamage()
+    {
         health--;
     }
 }
