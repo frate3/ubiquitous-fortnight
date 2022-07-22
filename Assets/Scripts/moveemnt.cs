@@ -127,11 +127,12 @@ public class moveemnt : MonoBehaviour
             speed = sprintSpeed;
 
         }
-        else 
+        else if (!grounded)
         {
             
             sprinting = false;
             speed = baseSpeed;
+
 
         }
 
@@ -151,7 +152,6 @@ public class moveemnt : MonoBehaviour
         if (!grounded)
         {
             moveDirection.y += Physics.gravity.y * Time.deltaTime;
-            speed = slowSpeed;
         }
         
     }
