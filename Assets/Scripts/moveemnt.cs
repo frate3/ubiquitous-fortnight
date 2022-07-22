@@ -24,6 +24,7 @@ public class moveemnt : MonoBehaviour
     float lastSpeed;
     bool grounded;
     float speed = 8f;
+    float baseSpeed;
     float moveX;
     float moveZ;
     float camX;
@@ -41,6 +42,7 @@ public class moveemnt : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        baseSpeed = speed;
         maxSprintTime = sprintTime;
         lastSpeed = speed;
         cc = GetComponent<CharacterController>();
@@ -106,12 +108,14 @@ public class moveemnt : MonoBehaviour
         }
         else if (sprintTime != maxSprintTime)
         {
-            speed = lastSpeed;
+            
+            
             sprinting = false;
         }
 
         if (sprintTime <= 0 || noMoveTime > 300)
         {
+            
             noMoveTime = 0;
             Invoke("resetSprintTime", 3);
         }
@@ -121,13 +125,14 @@ public class moveemnt : MonoBehaviour
             noMoveTime = 0;
             sprinting = true;
             lastSpeed = speed;
-
             speed = sprintSpeed;
+
         }
-        else if (Input.GetButtonUp("Sprint"))
+        else 
         {
+            
             sprinting = false;
-            speed = lastSpeed;
+            speed = baseSpeed;
 
         }
 
@@ -149,10 +154,7 @@ public class moveemnt : MonoBehaviour
             moveDirection.y += Physics.gravity.y * Time.deltaTime;
             speed = slowSpeed;
         }
-        else
-        {
-            speed = lastSpeed;
-        }
+        
     }
 
     void cameraMove()
