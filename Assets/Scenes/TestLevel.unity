@@ -369,7 +369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 1621008694}
-  spawnerSpot: {fileID: 2273820785121553272}
+  spawnerSpot: {fileID: 0}
 --- !u!135 &108393953
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3221,7 +3221,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23f9e24d020e642e08a21c039b500c3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hole: {fileID: 0}
 --- !u!1001 &1825878004
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3311,6 +3310,7 @@ GameObject:
   - component: {fileID: 1894693156}
   - component: {fileID: 1894693158}
   - component: {fileID: 1894693159}
+  - component: {fileID: 1894693160}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -3471,6 +3471,18 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   rb: {fileID: 7904360026354757823, guid: 80190906bb89947f799ad591954757fc, type: 3}
+--- !u!114 &1894693160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894693151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc54d3adb234b42b9a2cc623b2dc74d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1917674848
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5424,86 +5436,9 @@ Transform:
   - {fileID: 500469882590736893}
   - {fileID: 500469882310512720}
   - {fileID: 2273820783660868455}
-  - {fileID: 2273820785121553272}
   m_Father: {fileID: 108393951}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &2273820785121553272
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2273820785121553279}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.243882, y: 11.51, z: -8.974936}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2273820784921683403}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!154 &2273820785121553273
-TerrainCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2273820785121553279}
-  m_Material: {fileID: 0}
-  m_Enabled: 1
-  m_TerrainData: {fileID: 15600000, guid: 4fab1c53b351d468198cc2a1a50911b0, type: 2}
-  m_EnableTreeColliders: 1
---- !u!218 &2273820785121553274
-Terrain:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2273820785121553279}
-  m_Enabled: 1
-  serializedVersion: 6
-  m_TerrainData: {fileID: 15600000, guid: 4fab1c53b351d468198cc2a1a50911b0, type: 2}
-  m_TreeDistance: 5000
-  m_TreeBillboardDistance: 50
-  m_TreeCrossFadeLength: 5
-  m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
-  m_DetailObjectDensity: 1
-  m_HeightmapPixelError: 5
-  m_SplatMapDistance: 1000
-  m_HeightmapMaximumLOD: 0
-  m_ShadowCastingMode: 2
-  m_DrawHeightmap: 1
-  m_DrawInstanced: 1
-  m_DrawTreesAndFoliage: 1
-  m_ReflectionProbeUsage: 1
-  m_MaterialTemplate: {fileID: 2100000, guid: 594ea882c5a793440b60ff72d896021e, type: 2}
-  m_BakeLightProbesForTrees: 1
-  m_PreserveTreePrototypeLayers: 0
-  m_DeringLightProbesForTrees: 1
-  m_ScaleInLightmap: 0.8
-  m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
-  m_GroupingID: 0
-  m_RenderingLayerMask: 1
-  m_AllowAutoConnect: 1
---- !u!1 &2273820785121553279
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2273820785121553272}
-  - component: {fileID: 2273820785121553274}
-  - component: {fileID: 2273820785121553273}
-  m_Layer: 6
-  m_Name: Terrain_0_0_15aee011-809b-474c-8d46-fc505dfe3208
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
 --- !u!33 &3434937119911502518
 MeshFilter:
   m_ObjectHideFlags: 0

@@ -26,14 +26,12 @@ public class enemyMovement : MonoBehaviour
     void Update()
     {
         Check();
-
         if (walking){
             animator.SetBool("Walking", true);
             agent.destination = player.transform.position;
         } else {
             animator.SetBool("Walking", false);
         }
-        
         
     }
 
