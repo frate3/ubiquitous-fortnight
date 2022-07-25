@@ -241,8 +241,8 @@ public class moveemnt : MonoBehaviour
     }
 
 
-    public static void TakeDamage()
+    public static void TakeDamage(float Damage)
     {
-        health--;
+        health -= Damage;
     }
 }
