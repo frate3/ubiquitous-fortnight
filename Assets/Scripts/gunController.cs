@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class gunController : MonoBehaviour
 {
-    bool canSwitch = true;
+    bool canSwitch = false;
     [SerializeField] gun instance;
     [SerializeField] pistolScript instance1;
     [SerializeField] GameObject pistol;
@@ -13,8 +13,10 @@ public class gunController : MonoBehaviour
     List<GameObject> gunlist = new List<GameObject>();
     int startingWeapon = 1;
     GameObject currentWeapon;
-    float timeForSwitch = 2;
+    float timeForSwitch = 1;
     int lastMouse;
+    float waitTime = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,11 +32,23 @@ public class gunController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(mouse);
-        print(lastMouse);
+
         inputGetter();
-        weaponChange();
-        //Debug.Log(canSwitch);
+
+        addTime();
+        if (waitTime >= timeForSwitch)
+        {
+            switchWeapon();
+            print("can run");
+            canSwitch = true;
+        }
+        else
+        {
+            canSwitch = false;
+        }
+
+        //weaponChange();
+        /*Debug.Log(waitTime);*/
 
 
     }
@@ -58,12 +72,11 @@ public class gunController : MonoBehaviour
                     }
                     if (mouse != lastMouse)
                     {
-                        
-                        canSwitch = false;
+                        Debug.Log("fax");
                         Invoke("reset", timeForSwitch);
                     }
                 }
-                
+
             }
         }
     }
@@ -71,43 +84,49 @@ public class gunController : MonoBehaviour
     void switchWeapon()
     {
 
-        if (canSwitch)
+        if (!instance.reload && !instance1.reload)
         {
-            if (!instance.reload && !instance1.reload)
+            canSwitch = false;
+
+            for (int i = 0; i < gunlist.Count; i++)
             {
-                for (int i = 0; i < gunlist.Count; i++)
+                if (i == mouse)
                 {
-                    if (i == mouse)
-                    {
 
-                        gunlist[i].SetActive(true);
+                    gunlist[i].SetActive(true);
 
-                        currentWeapon = gunlist[i];
-                    }
-                    else if (mouse != lastMouse)
-                    {
+                }
 
-                        StartCoroutine(anim(gunlist[lastMouse], i));
-                        Invoke("reset", timeForSwitch);
-                        gunlist[i].SetActive(false);
-                        canSwitch = false;
+                else if (mouse != lastMouse)
+                {
 
-                    }
+
+                    waitTime = 0;
+                    StartCoroutine(anim(gunlist[lastMouse], i));
+                    canSwitch = true;
+
+
+
                 }
             }
 
+
         }
+
     }
 
-    private void reset()
+    private void addTime()
     {
-        canSwitch = true;
+
+        waitTime += Time.deltaTime;
     }
 
     IEnumerator anim(GameObject gun, int num)
     {
+
         gun.GetComponent<Animator>().SetBool("switching", true);
         yield return new WaitForSeconds(1);
+        gunlist[num].SetActive(false);
 
 
     }
@@ -122,18 +141,21 @@ public class gunController : MonoBehaviour
 
     void inputGetter()
     {
-        lastMouse = mouse;
-        mouse += (int)Input.mouseScrollDelta.y;
 
-        if (mouse <= 0)
+        if (canSwitch)
         {
-            mouse = 0;
+            lastMouse = mouse;
+            mouse += (int)Input.mouseScrollDelta.y;
+
+            if (mouse <= 0)
+            {
+                mouse = 0;
+            }
+            else if (mouse >= gunlist.Count)
+            {
+                mouse = gunlist.Count - 1;
+            }
         }
-        else if (mouse >= gunlist.Count)
-        {
-            mouse = gunlist.Count - 1;
-        }
-        
 
     }
 }

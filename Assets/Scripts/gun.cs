@@ -17,7 +17,7 @@ public class gun : MonoBehaviour
     /*public float bulletsFired;*/
     float mag = 40;
     float maxMag;
-    float timeBetweenReload = 2.5f;
+    float timeBetweenReload = 2f;
     public bool reload = false;
     float timeBetweenShoot = 0.2f;
     public bool readyToShoot = true;
