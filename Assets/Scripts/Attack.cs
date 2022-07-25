@@ -13,7 +13,7 @@ public class Attack : MonoBehaviour
         print(col.tag);
         if (col.CompareTag("Player"))
         {
-            moveemnt.TakeDamage();
+            moveemnt.TakeDamage(1);
             animator.SetBool("Walking", false);
             animator.SetBool("Attacking", true);
             Invoke("reset",1);
