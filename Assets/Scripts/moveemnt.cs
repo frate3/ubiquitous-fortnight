@@ -119,23 +119,7 @@ public class moveemnt : MonoBehaviour
 
     void sprint()
     {
-        if (sprinting && sprintTime >= 0)
-        {
-            sprintTime--;
-        }
-        else if (sprintTime != maxSprintTime)
-        {
-            
-            
-            sprinting = false;
-        }
-
-        if (sprintTime <= 0 || noMoveTime > 300)
-        {
-            
-            noMoveTime = 0;
-            Invoke("resetSprintTime", 3);
-        }
+        print(speed);
 
         if (Input.GetButtonDown("Sprint") && sprintTime >= 0 && allowSprint)
         {
