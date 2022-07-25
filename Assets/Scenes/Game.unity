@@ -5861,6 +5861,20 @@ MonoBehaviour:
   player: {fileID: 695828208}
   bulletHole: {fileID: 1497047773}
   shootPoint: {fileID: 813414495}
+--- !u!114 &600828924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600828920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b5766b2a815c74baab07d271343289, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smooth: 8
+  multiplier: 2
 --- !u!1 &695828208
 GameObject:
   m_ObjectHideFlags: 0
