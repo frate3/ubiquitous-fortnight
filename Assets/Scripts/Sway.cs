@@ -5,15 +5,15 @@ using UnityEngine;
 public class Sway : MonoBehaviour
 {
 
-    [Header("Sway Settings")]
-    [SerializeField] private float smooth;
-    [SerializeField] private float multiplier;
+    private float smooth = 8;
+    private float multiplier = 2;
 
     private void Update()
     {
+
         // get mouse input
-        float mouseX = Input.GetAxisRaw("Mouse X") * multiplier;
-        float mouseY = Input.GetAxisRaw("Mouse Y") * multiplier;
+        float mouseX = Input.GetAxis("Mouse X") * multiplier;
+        float mouseY = Input.GetAxis("Mouse Y") * multiplier;
 
         // calculate target rotation
         Quaternion rotationX = Quaternion.AngleAxis(-mouseY, Vector3.right);

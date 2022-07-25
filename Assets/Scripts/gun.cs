@@ -19,7 +19,7 @@ public class gun : MonoBehaviour
     float maxMag;
     float timeBetweenReload = 2f;
     public bool reload = false;
-    float timeBetweenShoot = 0.2f;
+    float timeBetweenShoot = 0.5f;
     public bool readyToShoot = true;
     [SerializeField] GameObject crosshair;
     [SerializeField] GameObject player;

@@ -34,7 +34,7 @@ public class moveemnt : MonoBehaviour
     public bool sprinting = false;
     float slowSpeed = 4f;
     float noMoveTime;
-    bool inWater  = false;
+    bool inWater = false;
     bool allowSprint;
     bool flashState = true;
     public GameObject flashlight;
@@ -48,13 +48,14 @@ public class moveemnt : MonoBehaviour
         maxSprintTime = sprintTime;
         lastSpeed = speed;
         cc = GetComponent<CharacterController>();
-        flashlight.SetActive(true);
+        if (flashlight) flashlight.SetActive(true);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
-    void Update(){
+    void Update()
+    {
         ground();
         Inputs();
         cameraMove();
@@ -73,11 +74,13 @@ public class moveemnt : MonoBehaviour
 
 
 
-        if (!sprinting){
+        if (!sprinting)
+        {
             noMoveTime++;
         }
 
-        if (health < 0){
+        if (health < 0)
+        {
             Death();
             // SceneManager.LoadScene("TestScene");
             //do death things
@@ -104,16 +107,21 @@ public class moveemnt : MonoBehaviour
 
     }
 
-    void Flash(){
-        if (Input.GetButtonDown("FlashToggle")){
-            if (flashState){
+    void Flash()
+    {
+        if (Input.GetButtonDown("FlashToggle"))
+        {
+            if (flashState)
+            {
                 flashlight.SetActive(false);
                 flashState = false;
-            } else {
+            }
+            else
+            {
                 flashlight.SetActive(true);
                 flashState = true;
             }
-            
+
         }
     }
 
@@ -125,14 +133,14 @@ public class moveemnt : MonoBehaviour
         }
         else if (sprintTime != maxSprintTime)
         {
-            
-            
+
+
             sprinting = false;
         }
 
         if (sprintTime <= 0 || noMoveTime > 300)
         {
-            
+
             noMoveTime = 0;
             Invoke("resetSprintTime", 3);
         }
@@ -147,7 +155,7 @@ public class moveemnt : MonoBehaviour
         }
         else if (!grounded)
         {
-            
+
             sprinting = false;
             speed = baseSpeed;
 
@@ -171,7 +179,7 @@ public class moveemnt : MonoBehaviour
         {
             moveDirection.y += Physics.gravity.y * Time.deltaTime;
         }
-        
+
     }
 
     void cameraMove()
@@ -225,17 +233,20 @@ public class moveemnt : MonoBehaviour
             flashlight.SetActive(false);
             flashState = false;
             inWater = true;
-        } else
+        }
+        else
         {
             inWater = false;
         }
-        if (other.gameObject.layer == LayerMask.NameToLayer("Lava")){
+        if (other.gameObject.layer == LayerMask.NameToLayer("Lava"))
+        {
             Death();
         }
     }
 
 
-    void Death(){
+    void Death()
+    {
         print("death");
         //kill player and do other death things
     }

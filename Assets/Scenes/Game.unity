@@ -166,7 +166,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 54178655}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: lava
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -702,7 +702,7 @@ GameObject:
   - component: {fileID: 382590640}
   - component: {fileID: 382590639}
   - component: {fileID: 382590638}
-  m_Layer: 4
+  m_Layer: 3
   m_Name: Water1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -871,7 +871,7 @@ GameObject:
   - component: {fileID: 407244434}
   - component: {fileID: 407244436}
   - component: {fileID: 407244435}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: snow (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6062,7 +6062,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 697169219}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Gray Volume Fog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6195,7 +6195,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 774269738}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6231,7 +6231,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 796766169}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6842,7 +6842,7 @@ GameObject:
   - component: {fileID: 1409796130}
   - component: {fileID: 1409796132}
   - component: {fileID: 1409796131}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11644,7 +11644,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1416522942}
-  m_Layer: 4
+  m_Layer: 3
   m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11897,7 +11897,7 @@ GameObject:
   - component: {fileID: 1524439688}
   - component: {fileID: 1524439687}
   - component: {fileID: 1524439686}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: Lava
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12070,7 +12070,7 @@ GameObject:
   - component: {fileID: 1614761553}
   - component: {fileID: 1614761555}
   - component: {fileID: 1614761554}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LPW_Rock_Wall_A1_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12321,7 +12321,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1699484427}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: snow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12357,7 +12357,7 @@ GameObject:
   - component: {fileID: 1743654465}
   - component: {fileID: 1743654467}
   - component: {fileID: 1743654466}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LPW_Rock_Wall_A1_01 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12438,7 +12438,7 @@ GameObject:
   - component: {fileID: 1777439462}
   - component: {fileID: 1777439464}
   - component: {fileID: 1777439463}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LPW_Rock_Wall_A1_01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13181,7 +13181,7 @@ GameObject:
   - component: {fileID: 1933951140}
   - component: {fileID: 1933951142}
   - component: {fileID: 1933951141}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: snow (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17985,7 +17985,7 @@ GameObject:
   - component: {fileID: 2037149060}
   - component: {fileID: 2037149062}
   - component: {fileID: 2037149061}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: snow (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22882,7 +22882,7 @@ GameObject:
   - component: {fileID: 2094403594}
   - component: {fileID: 2094403596}
   - component: {fileID: 2094403595}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: snow (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
