@@ -36,12 +36,13 @@ public class gunController : MonoBehaviour
         inputGetter();
 
         addTime();
-        if (waitTime >= timeForSwitch)
+        if (waitTime >= timeForSwitch && !instance.reload && !instance1.reload)
         {
             switchWeapon();
             print("can run");
             canSwitch = true;
         }
+
         else
         {
             canSwitch = false;

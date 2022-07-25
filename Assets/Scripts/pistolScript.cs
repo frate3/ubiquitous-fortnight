@@ -24,8 +24,10 @@ public class pistolScript : MonoBehaviour
     [SerializeField] GameObject player;
     GameObject bullet;
     [SerializeField] GameObject shootPoint;
+    [SerializeField] GameObject bulletHole;
     Vector3 startPosition;
     Vector3 lowerPosition;
+
     // Start is called before the first frame update
 
 
@@ -55,7 +57,7 @@ public class pistolScript : MonoBehaviour
 
     void fire()
     {
-        if (mag < 40 && Input.GetKeyDown(KeyCode.R))
+        if (mag < 12 && Input.GetKeyDown(KeyCode.R))
         {
             animController.SetBool("canReload", true);
             reload = true;
@@ -71,7 +73,7 @@ public class pistolScript : MonoBehaviour
                 mag--;
 
                 bulletCode bulletScript = newBullet.GetComponent<bulletCode>();
-                bulletScript.Init(player, shootPoint);
+                bulletScript.Init(player, shootPoint, bulletHole);
                 Destroy(newBullet, 10f);
                 Invoke("reset", timeBetweenShoot);
             }

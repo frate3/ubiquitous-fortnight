@@ -23,15 +23,14 @@ public class gun : MonoBehaviour
     public bool readyToShoot = true;
     [SerializeField] GameObject crosshair;
     [SerializeField] GameObject player;
+    [SerializeField] GameObject bulletHole;
     GameObject bullet;
     [SerializeField] GameObject shootPoint;
+
     // Start is called before the first frame update
 
 
-    void scrollingGuns ()
-    {
-
-    }
+    
     private void Awake()
     {
         //animController = GetComponent<Animator>();
@@ -71,7 +70,7 @@ public class gun : MonoBehaviour
                 GameObject newBullet = Instantiate(bullet, shootPoint.transform.position, shootPoint.transform.rotation);
                 mag--;
                 bulletCode bulletScript = newBullet.GetComponent<bulletCode>();
-                bulletScript.Init(player, shootPoint);
+                bulletScript.Init(player, shootPoint, bulletHole);
                 Destroy(newBullet, 10f);
                 Invoke("reset", timeBetweenShoot);
             }
