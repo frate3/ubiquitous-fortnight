@@ -8,7 +8,6 @@ public class bulletCode : MonoBehaviour
     Rigidbody rb;
     float force = 20f;
     GameObject player;
-    public GameObject hole;
     // Start is called before the first frame update
     void Awake()
     {
