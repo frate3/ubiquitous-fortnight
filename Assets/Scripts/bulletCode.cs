@@ -6,7 +6,7 @@ public class bulletCode : MonoBehaviour
 {
     RaycastHit hit;
     Rigidbody rb;
-    float force = 20f;
+    float force = 40f;
     GameObject player;
 
     // Start is called before the first frame update
@@ -36,8 +36,12 @@ public class bulletCode : MonoBehaviour
 
                 direction = hit.point - gun.transform.position;
 
-                GameObject holeDestroy = Instantiate(bulletHole, hit.point + hit.normal / 1000, Quaternion.LookRotation(hit.normal));
-                Destroy(holeDestroy, 5);
+                if (hit.collider.gameObject.layer == 3)
+                {
+                    
+                    GameObject holeDestroy = Instantiate(bulletHole, hit.point + hit.normal / 1000, Quaternion.LookRotation(hit.normal));
+                    Destroy(holeDestroy, 5);
+                }
             }
             else
             {
