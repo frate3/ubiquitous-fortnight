@@ -9,7 +9,8 @@ public class gunController : MonoBehaviour
     [SerializeField] pistolScript instance1;
     [SerializeField] GameObject pistol;
     [SerializeField] GameObject assaultRifle;
-    [SerializeField] int mouse;
+    [SerializeField] GameObject empty;
+    [SerializeField] public int mouse;
     List<GameObject> gunlist = new List<GameObject>();
     int startingWeapon = 1;
     GameObject currentWeapon;
@@ -135,6 +136,7 @@ public class gunController : MonoBehaviour
     {
         gunlist.Add(pistol);
         gunlist.Add(assaultRifle);
+        gunlist.Add(empty);
 
 
 
