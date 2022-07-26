@@ -23,8 +23,8 @@ public class gun : MonoBehaviour
     public bool readyToShoot = true;
     [SerializeField] GameObject crosshair;
     [SerializeField] GameObject player;
+    public GameObject bullet;
     [SerializeField] GameObject bulletHole;
-    GameObject bullet;
     [SerializeField] GameObject shootPoint;
 
     // Start is called before the first frame update
@@ -38,7 +38,7 @@ public class gun : MonoBehaviour
     void Start()
     {
         maxMag = mag;
-        bullet = Resources.Load("bullet") as GameObject;
+        //bullet = Resources.Load("bullet") as GameObject;
 
     }
 

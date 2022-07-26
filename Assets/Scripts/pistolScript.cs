@@ -22,7 +22,7 @@ public class pistolScript : MonoBehaviour
     public bool readyToShoot = true;
     [SerializeField] GameObject crosshair;
     [SerializeField] GameObject player;
-    GameObject bullet;
+    public GameObject bullet;
     [SerializeField] GameObject shootPoint;
     [SerializeField] GameObject bulletHole;
     Vector3 startPosition;
@@ -40,7 +40,7 @@ public class pistolScript : MonoBehaviour
     {
         startPosition = transform.localPosition;
         maxMag = mag;
-        bullet = Resources.Load("bullet") as GameObject;
+        //bullet = Resources.Load("bullet") as GameObject;
         lowerPosition = transform.localPosition - new Vector3(0, 1, 0);
 
     }
