@@ -73,12 +73,6 @@ public class moveemnt : MonoBehaviour
         }
 
 
-
-        if (!sprinting)
-        {
-            noMoveTime++;
-        }
-
         if (health < 0)
         {
             Death();
@@ -126,49 +120,36 @@ public class moveemnt : MonoBehaviour
     }
 
     void sprint()
-    {
-        if (sprinting && sprintTime >= 0)
+    {  
+        if (speed > 8)
         {
             sprintTime--;
         }
-        else if (sprintTime != maxSprintTime)
+        if (sprintTime <= 0)
         {
-
-
-            sprinting = false;
+            speed = baseSpeed;
+            Invoke("resetTime", 3);
         }
-
-        if (sprintTime <= 0 || noMoveTime > 300)
+        if (Input.GetButton("Sprint") && sprintTime > 0)
         {
-
-            noMoveTime = 0;
-            Invoke("resetSprintTime", 3);
-        }
-
-        if (Input.GetButtonDown("Sprint") && sprintTime >= 0 && allowSprint)
-        {
-            noMoveTime = 0;
             sprinting = true;
-            lastSpeed = speed;
             speed = sprintSpeed;
 
         }
-        else if (!grounded)
+        else
         {
-
             sprinting = false;
             speed = baseSpeed;
+
 
 
         }
 
     }
 
-    void resetSprintTime()
+    void resetTime()
     {
-        sprintTime = maxSprintTime;
-
-        speed = lastSpeed;
+        sprintTime = 500;
     }
 
 
