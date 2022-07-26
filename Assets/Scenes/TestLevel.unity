@@ -2262,8 +2262,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.56, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 775634590}
   - {fileID: 1758798355}
+  - {fileID: 775634590}
   m_Father: {fileID: 1894693155}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3397,7 +3397,7 @@ Transform:
   m_Children:
   - {fileID: 913032560}
   m_Father: {fileID: 963194228}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1758798356
 Animator:
@@ -3575,7 +3575,7 @@ MonoBehaviour:
   instance: {fileID: 913032563}
   instance1: {fileID: 775634593}
   pistol: {fileID: 775634591}
-  assaultRifle: {fileID: 913032561}
+  assaultRifle: {fileID: 1758798354}
   mouse: 0
 --- !u!114 &1894693159
 MonoBehaviour:
