@@ -127,27 +127,15 @@ public class moveemnt : MonoBehaviour
 
     void sprint()
     {
-        if (sprinting && sprintTime >= 0)
-        {
+        if(speed >8){
             sprintTime--;
         }
-        else if (sprintTime != maxSprintTime)
-        {
-
-
-            sprinting = false;
-        }
-
-        if (sprintTime <= 0 || noMoveTime > 300)
-        {
-
-            noMoveTime = 0;
+        if (sprintTime < 0){
             Invoke("resetSprintTime", 3);
         }
 
-        if (Input.GetButtonDown("Sprint") && sprintTime >= 0 && allowSprint)
+        if (Input.GetButtonDown("Sprint") && sprintTime >= 0)
         {
-            noMoveTime = 0;
             sprinting = true;
             lastSpeed = speed;
             speed = sprintSpeed;
@@ -166,9 +154,8 @@ public class moveemnt : MonoBehaviour
 
     void resetSprintTime()
     {
-        sprintTime = maxSprintTime;
 
-        speed = lastSpeed;
+        sprintTime = 500;
     }
 
 
