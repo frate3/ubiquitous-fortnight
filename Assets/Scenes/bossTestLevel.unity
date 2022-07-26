@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.0942541, g: 0.1195026, b: 0.15506229, a: 1}
+  m_IndirectSpecularColor: {r: 0.094257034, g: 0.11950519, b: 0.15506512, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1816,6 +1816,7 @@ MonoBehaviour:
   crosshair: {fileID: 346248555}
   player: {fileID: 1894693151}
   shootPoint: {fileID: 1952542627}
+  bulletHole: {fileID: 0}
 --- !u!1 &797506648
 GameObject:
   m_ObjectHideFlags: 0
@@ -35786,6 +35787,7 @@ MonoBehaviour:
   readyToShoot: 1
   crosshair: {fileID: 346248555}
   player: {fileID: 1894693151}
+  bulletHole: {fileID: 0}
   shootPoint: {fileID: 328277942}
 --- !u!95 &5103059710170958083
 Animator:
