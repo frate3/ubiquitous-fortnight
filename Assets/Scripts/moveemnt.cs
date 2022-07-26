@@ -121,6 +121,7 @@ public class moveemnt : MonoBehaviour
 
     void sprint()
     {
+<<<<<<< HEAD
         
         if (speed > 8)
         {
@@ -131,6 +132,9 @@ public class moveemnt : MonoBehaviour
             speed = baseSpeed;
             Invoke("resetTime", 3);
         }
+=======
+        print(speed);
+>>>>>>> f7e32d80719dcfb4c0fc09f812e44d395f2a07f3
 
         if (Input.GetButton("Sprint") && sprintTime > 0)
         {
