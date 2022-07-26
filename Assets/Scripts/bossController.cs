@@ -6,6 +6,7 @@ public class bossController : MonoBehaviour
 {
     public Animator animator;
     public bool active= false;
+    float fireballForce = 4;
     public Transform target;
     float attackCoolDown = 5;
     public GameObject fireBall;
@@ -71,7 +72,7 @@ public class bossController : MonoBehaviour
         attacksRemaining--;
         animator.SetInteger("Attacks", attacksRemaining);
         GameObject newFireball = Instantiate(fireBall, attackPoint.transform.position, attackPoint.transform.rotation);
-        //move fireball
+        newFireball.GetComponent<Rigidbody>().AddForce((player.transform.position - attackPoint.transform.position).normalized * fireballForce, ForceMode.Impulse);
 
         if (attacksRemaining > 0)
         {
