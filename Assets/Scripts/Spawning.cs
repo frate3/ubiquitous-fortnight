@@ -13,13 +13,19 @@ public class Spawning : MonoBehaviour
     public Transform spawnerSpot;
 
 
-    
-    private void OnTriggerEnter(Collider col){
-        if (!spawning){
-            spawning = true;
-            Spawn();
+    public void Update()
+    {
+        Collider[] contacts = Physics.OverlapSphere(transform.position, 30f);
+        for (int i = 0; i < contacts.Length; i++)
+        {
+            if (contacts[i].tag == "Player" && ! spawning)
+            {
+                spawning = true;
+                Spawn();
+            }
         }
     }
+
 
     private void Spawn(){
         float spawnAmount = SpawnNum();
