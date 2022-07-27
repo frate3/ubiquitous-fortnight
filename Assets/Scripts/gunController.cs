@@ -16,8 +16,23 @@ public class gunController : MonoBehaviour
     float timeForSwitch = 1;
     int lastMouse;
     float waitTime = 1;
+    public static gunController Instance { get; private set; }
 
     // Start is called before the first frame update
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     void Start()
     {
         addGuns();

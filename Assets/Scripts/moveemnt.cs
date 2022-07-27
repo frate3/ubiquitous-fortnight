@@ -53,7 +53,17 @@ public class moveemnt : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Update is called once per frame
+    public float CamY
+    {
+        get => camY;
+        set
+        {
+            camY = Mathf.Clamp(value, -89, 90);
+        }
+
+        
+    }
+
     void Update()
     {
         ground();
@@ -186,8 +196,7 @@ public class moveemnt : MonoBehaviour
     {
         transform.rotation = Quaternion.Euler(0, camX, 0);
 
-        camY = Mathf.Clamp(camY, -90, 90);
-        cam.transform.localRotation = Quaternion.Euler(camY, 0, 0);
+        cam.transform.localRotation = Quaternion.Euler(CamY, 0, 0);
     }
 
 
@@ -209,7 +218,7 @@ public class moveemnt : MonoBehaviour
         moveZ = Input.GetAxisRaw("Vertical");
 
         camX += Input.GetAxis("Mouse X") * camSpeed;
-        camY -= Input.GetAxis("Mouse Y") * camSpeed;
+        CamY -= Input.GetAxis("Mouse Y") * camSpeed;
 
     }
 
