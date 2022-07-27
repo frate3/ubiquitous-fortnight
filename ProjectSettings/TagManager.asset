@@ -6,6 +6,7 @@ TagManager:
   tags:
   - hit
   - bullet
+  - end
   layers:
   - Default
   - TransparentFX

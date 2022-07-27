@@ -64,6 +64,7 @@ public class moveemnt : MonoBehaviour
         sprint();
         Terrain();
         Flash();
+        GameEnd();
         if (pb != null)
         {
             pb.BarValue = health;
@@ -162,6 +163,17 @@ public class moveemnt : MonoBehaviour
         sprintTime = 500;
     }
 
+    void GameEnd()
+    {
+        Collider[] contacts = Physics.OverlapSphere(transform.position, 30f);
+        for (int i = 0; i < contacts.Length; i++)
+        {
+            if(contacts[i].tag == "end")
+            {
+                Death();
+            }
+        }
+    }
 
 
     void gravity()
@@ -238,7 +250,7 @@ public class moveemnt : MonoBehaviour
 
     void Death()
     {
-        print("death");
+        SceneManager.LoadScene("Game");
         //kill player and do other death things
     }
 
