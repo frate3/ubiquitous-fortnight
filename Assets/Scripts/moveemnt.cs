@@ -10,7 +10,7 @@ public class moveemnt : MonoBehaviour
     Vector3 direction;
     Vector3 moveDirection = Vector3.zero;
 
-    public Health health = new Health();
+    public float Health = 100;
     public Damage damage = new Damage();
 
     [Header("Changeble Values")]
@@ -23,6 +23,7 @@ public class moveemnt : MonoBehaviour
     public float camSpeed = 4f;
     CharacterController cc;
 
+    bool isTouching;
     float lastSpeed;
     bool grounded;
     float speed = 8f;
@@ -46,7 +47,6 @@ public class moveemnt : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        health.amount = 100;
         baseSpeed = speed;
         maxSprintTime = sprintTime;
         lastSpeed = speed;
@@ -54,6 +54,15 @@ public class moveemnt : MonoBehaviour
         if (flashlight) flashlight.SetActive(true);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public float health
+    {
+        get => Health;
+        set
+        {
+            Health = Mathf.Clamp(value, 0, 100);
+        }
     }
 
     public float CamY
@@ -64,7 +73,7 @@ public class moveemnt : MonoBehaviour
             camY = Mathf.Clamp(value, -89, 90);
         }
 
-        
+
     }
 
     void Update()
@@ -76,9 +85,10 @@ public class moveemnt : MonoBehaviour
         sprint();
         Terrain();
         Flash();
+        onTriggerMe();
         if (pb != null)
         {
-            pb.BarValue = health.amount;
+            pb.BarValue = health;
         }
         if (spb != null)
         {
@@ -92,7 +102,7 @@ public class moveemnt : MonoBehaviour
             noMoveTime++;
         }
 
-        if (health.amount < 0)
+        if (health < 0)
         {
             Death();
             // SceneManager.LoadScene("TestScene");
@@ -106,7 +116,7 @@ public class moveemnt : MonoBehaviour
 
         jump();
 
-        Debug.Log(health.amount);
+        Debug.Log(health);
 
         cc.Move(moveDirection * Time.deltaTime);
     }
@@ -240,7 +250,7 @@ public class moveemnt : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        print(other);
+        
         if (other.gameObject.layer == LayerMask.NameToLayer("Water"))
         {
             print("in Water");
@@ -256,6 +266,23 @@ public class moveemnt : MonoBehaviour
         {
             Death();
         }
+
+        if (other.CompareTag("health"))
+        {
+            health = Damage.AddHealth(health, 20);
+            Destroy(other.gameObject);
+        }
+    }
+
+    void onTriggerMe()
+    {
+        Collider[] col = Physics.OverlapSphere(transform.position, 0.8f, LayerMask.GetMask("Enemy"));
+        if (col.Length > 0)
+        {
+            
+            /*for (int i = 0; i < col.Length; i++) Debug.Log(col[i].gameObject.name);*/
+            health = Damage.TakeDamage(health, 8 * Time.deltaTime);
+        }
     }
 
 
@@ -266,5 +293,5 @@ public class moveemnt : MonoBehaviour
     }
 
 
-    
+
 }

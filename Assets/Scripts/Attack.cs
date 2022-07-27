@@ -5,21 +5,31 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
 
+    public bool isTouching;
     public Animator animator;
     [SerializeField] moveemnt move;
 
-    
+    Collider[] col;
 
-    private void OnTriggerStay(Collider col)
+    private void Update()
     {
-        print(col.tag);
+        //DamageStealer();
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+        /*col = Physics.OverlapSphere(move.transform.position, 15, LayerMask.GetMask("Player"));*/
+        
         if (col.CompareTag("Player"))
         {
-            Debug.Log("is attacking");
-            Damage.TakeDamage(ref move.health, 1);
+            /*Debug.Log("is attacking");*/
             animator.SetBool("Walking", false);
             animator.SetBool("Attacking", true);
             Invoke("reset",1);
+        }
+        else
+        {
+            isTouching = false;
         }
     }
 

@@ -18,10 +18,15 @@ public struct Damage
 
     public DamageInfo info;
 
-    public static float TakeDamage(ref Health health, int damageAmount)
+    public static float TakeDamage(float health, float damageAmount)
     {
-        health.amount -= damageAmount;
-        return health.amount;
+        health -= damageAmount;
+        return health;
+    }
+    public static float AddHealth(float health, float healthAmount)
+    {
+        health += healthAmount;
+        return health;
     }
 }
 
