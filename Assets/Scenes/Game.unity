@@ -20757,10 +20757,8 @@ MonoBehaviour:
   cam: {fileID: 170130229}
   pb: {fileID: 1788961506}
   spb: {fileID: 2144274661}
-  sprintTime: 500
   jumpHeight: 5
   camSpeed: 4
-  sprinting: 0
   flashlight: {fileID: 2073846466}
 --- !u!143 &695828211
 CharacterController:

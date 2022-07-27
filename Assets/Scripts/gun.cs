@@ -63,7 +63,7 @@ public class gun : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
 
-            if (!reload && readyToShoot && mag > 0)
+            if (!reload && readyToShoot && mag > 0 && !moveemnt.sprinting)
             {
                 readyToShoot = false;
                 Flash();

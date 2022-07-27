@@ -16,7 +16,6 @@ public class moveemnt : MonoBehaviour
     public ProgressBar pb;
     public ProgressBar spb;
     public static float health = 100;
-    public float sprintTime = 500;
     public float jumpHeight = 5f;
     public float camSpeed = 4f;
     CharacterController cc;
@@ -31,13 +30,13 @@ public class moveemnt : MonoBehaviour
     float camY;
     float sprintSpeed = 12f;
     float maxSprintTime;
-    public bool sprinting = false;
+    public static bool sprinting = false;
     float slowSpeed = 4f;
-    float noMoveTime;
     bool inWater = false;
-    bool allowSprint;
     bool flashState = true;
     public GameObject flashlight;
+    float timeToCross = 6000;
+    bool allowSprint;
 
 
 
@@ -46,7 +45,6 @@ public class moveemnt : MonoBehaviour
     void Start()
     {
         baseSpeed = speed;
-        maxSprintTime = sprintTime;
         lastSpeed = speed;
         cc = GetComponent<CharacterController>();
         if (flashlight) flashlight.SetActive(true);
@@ -57,6 +55,7 @@ public class moveemnt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        print(Time.time + " Time");
         ground();
         Inputs();
         cameraMove();
@@ -69,17 +68,8 @@ public class moveemnt : MonoBehaviour
         {
             pb.BarValue = health;
         }
-        if (spb != null)
-        {
-            spb.BarValue = sprintTime / 5;
-        }
 
 
-
-        if (!sprinting)
-        {
-            noMoveTime++;
-        }
 
         if (health < 0)
         {
@@ -129,19 +119,8 @@ public class moveemnt : MonoBehaviour
 
     void sprint()
     {
-        if (speed > 8)
+        if (Input.GetButtonDown("Sprint"))
         {
-            sprintTime--;
-        }
-
-        if (sprintTime < 0)
-        {
-            Invoke("resetSprintTime", 3);
-        }
-
-        if (Input.GetButtonDown("Sprint") && sprintTime >= 0)
-        {
-            noMoveTime = 0;
             sprinting = true;
             lastSpeed = speed;
             speed = sprintSpeed;
@@ -157,21 +136,21 @@ public class moveemnt : MonoBehaviour
         }
 
     }
-
-    void resetSprintTime()
-    {
-        sprintTime = 500;
-    }
-
     void GameEnd()
     {
         Collider[] contacts = Physics.OverlapSphere(transform.position, 30f);
         for (int i = 0; i < contacts.Length; i++)
         {
-            if(contacts[i].tag == "end")
+            if (contacts[i].tag == "end")
             {
                 Death();
             }
+        }
+
+        if (maxSprintTime - Time.time <= 0)
+        {
+            print("gameEnd");
+            Death();
         }
     }
 
@@ -223,6 +202,9 @@ public class moveemnt : MonoBehaviour
         {
             allowSprint = false;
             speed = slowSpeed;
+        } else
+        {
+            allowSprint = true;
         }
     }
 
@@ -250,6 +232,7 @@ public class moveemnt : MonoBehaviour
 
     void Death()
     {
+        print("death");
         SceneManager.LoadScene("Game");
         //kill player and do other death things
     }
