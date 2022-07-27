@@ -10,12 +10,14 @@ public class moveemnt : MonoBehaviour
     Vector3 direction;
     Vector3 moveDirection = Vector3.zero;
 
+    public Health health = new Health();
+    public Damage damage = new Damage();
+
     [Header("Changeble Values")]
     [SerializeField] GameObject touchGround;
     [SerializeField] Camera cam;
     public ProgressBar pb;
     public ProgressBar spb;
-    public static float health = 100;
     public float sprintTime = 500;
     public float jumpHeight = 5f;
     public float camSpeed = 4f;
@@ -44,6 +46,7 @@ public class moveemnt : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        health.amount = 100;
         baseSpeed = speed;
         maxSprintTime = sprintTime;
         lastSpeed = speed;
@@ -75,7 +78,7 @@ public class moveemnt : MonoBehaviour
         Flash();
         if (pb != null)
         {
-            pb.BarValue = health;
+            pb.BarValue = health.amount;
         }
         if (spb != null)
         {
@@ -89,7 +92,7 @@ public class moveemnt : MonoBehaviour
             noMoveTime++;
         }
 
-        if (health < 0)
+        if (health.amount < 0)
         {
             Death();
             // SceneManager.LoadScene("TestScene");
@@ -102,6 +105,8 @@ public class moveemnt : MonoBehaviour
         moveDirection = transform.TransformDirection(moveDirection);
 
         jump();
+
+        Debug.Log(health.amount);
 
         cc.Move(moveDirection * Time.deltaTime);
     }
@@ -261,8 +266,5 @@ public class moveemnt : MonoBehaviour
     }
 
 
-    public static void TakeDamage(float Damage)
-    {
-        health -= Damage;
-    }
+    
 }

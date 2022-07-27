@@ -6,14 +6,17 @@ public class Attack : MonoBehaviour
 {
 
     public Animator animator;
+    [SerializeField] moveemnt move;
 
+    
 
-    private void OnTriggerEnter(Collider col)
+    private void OnTriggerStay(Collider col)
     {
         print(col.tag);
         if (col.CompareTag("Player"))
         {
-            moveemnt.TakeDamage(1);
+            Debug.Log("is attacking");
+            Damage.TakeDamage(ref move.health, 1);
             animator.SetBool("Walking", false);
             animator.SetBool("Attacking", true);
             Invoke("reset",1);

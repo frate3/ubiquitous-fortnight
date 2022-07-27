@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Fireball : MonoBehaviour
 {
+    [SerializeField] moveemnt move;
     private void Update()
     {
         Destroy(gameObject, 10);
@@ -14,7 +15,7 @@ public class Fireball : MonoBehaviour
         // Instantiate();
         if (other.CompareTag("Player"))
         {
-            moveemnt.TakeDamage(10);
+            /*Damage.TakeDamage(move.health, 10);*/
         }
 
 
