@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class moveemnt : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class moveemnt : MonoBehaviour
     public float jumpHeight = 5f;
     public float camSpeed = 4f;
     CharacterController cc;
+    [SerializeField] Text tx;
 
     bool isTouching;
     float lastSpeed;
@@ -86,6 +88,7 @@ public class moveemnt : MonoBehaviour
         Terrain();
         Flash();
         onTriggerMe();
+        Objective();
         if (pb != null)
         {
             pb.BarValue = health;
@@ -120,6 +123,12 @@ public class moveemnt : MonoBehaviour
 
         cc.Move(moveDirection * Time.deltaTime);
     }
+
+    void Objective()
+    {
+        tx.text = "Objective: Survive \n" + Mathf.Round(Time.time).ToString();
+    }
+
 
     void jump()
     {
