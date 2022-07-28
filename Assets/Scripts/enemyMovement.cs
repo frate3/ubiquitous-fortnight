@@ -12,6 +12,9 @@ public class enemyMovement : MonoBehaviour
     bool walking;
 
     // Start is called before the first frame update
+
+
+
     void Awake(){
         animator = GetComponent<Animator>();
     }
@@ -44,7 +47,7 @@ public class enemyMovement : MonoBehaviour
     }
 
     private void Die () {
-        
+
         Destroy(gameObject);
     }
 
