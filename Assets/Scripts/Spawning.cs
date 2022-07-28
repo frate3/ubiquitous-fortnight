@@ -47,12 +47,11 @@ public class Spawning : MonoBehaviour
     }
     
 
-    IEnumerator spawnAmount()
+    void spawnAmount()
     {
         for (int i = 0; i < amount; i++)
         {
-            yield return new WaitForSeconds(5f);
-            GameObject fart = Instantiate(enemy, WaveManager.randomVector3(spawnerSpot, -5, 5), Quaternion.identity);
+            GameObject fart = Instantiate(enemy, WaveManager.randomVector3(spawnerSpot, -10, 10), Quaternion.identity);
             spiders.Add(fart);
         }
         amount += 5;
