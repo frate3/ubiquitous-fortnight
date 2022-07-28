@@ -30,6 +30,7 @@ public class Spawning : MonoBehaviour
         for (int i=0; i < spawnAmount; i++){
             GameObject newEnemy = Instantiate(enemy, randomVector3(spawnerSpot, -10, 10), Quaternion.identity);
         }
+        print("pull");
         Invoke("reset", 15);
     }
 
