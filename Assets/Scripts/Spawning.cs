@@ -12,7 +12,7 @@ public class Spawning : MonoBehaviour
     public GameObject enemy;
     public Transform spawnerSpot;
     int wave;
-    public static bool enemiesSpawned = false;
+    public bool enemiesSpawned = true;
 
     private void Update()
     {
