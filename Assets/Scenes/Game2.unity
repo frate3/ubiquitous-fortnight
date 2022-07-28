@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3133343, g: 0.29403916, b: 0.5142698, a: 1}
+  m_IndirectSpecularColor: {r: 0.31292585, g: 0.2935707, b: 0.51400304, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 3429769}
   - component: {fileID: 12456585}
   - component: {fileID: 7627593}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StoneFence_Wall_LOD0 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -305,7 +305,7 @@ GameObject:
   - component: {fileID: 17973086}
   - component: {fileID: 17005982}
   - component: {fileID: 18998111}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: House1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -443,7 +443,7 @@ GameObject:
   - component: {fileID: 119245116}
   - component: {fileID: 118148092}
   - component: {fileID: 120083773}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: House5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -540,7 +540,7 @@ GameObject:
   - component: {fileID: 127091306}
   - component: {fileID: 119080298}
   - component: {fileID: 131298474}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StoneFence_Post_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -671,7 +671,7 @@ GameObject:
   - component: {fileID: 233430708}
   - component: {fileID: 224631220}
   - component: {fileID: 229238900}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StoneFence_Post_LOD0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -751,7 +751,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 249320285}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: fence (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -904,7 +904,7 @@ GameObject:
   - component: {fileID: 270622993}
   - component: {fileID: 279651857}
   - component: {fileID: 274814929}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StoneFence_Wall_LOD0 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1043,7 +1043,7 @@ GameObject:
   - component: {fileID: 293574733}
   - component: {fileID: 301326157}
   - component: {fileID: 289386125}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StoneFence_Wall_LOD0 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1124,7 +1124,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 314797056}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: fence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1166,7 +1166,6 @@ GameObject:
   m_Component:
   - component: {fileID: 326858599}
   - component: {fileID: 326858597}
-  - component: {fileID: 326858596}
   m_Layer: 6
   m_Name: Spawning
   m_TagString: Untagged
@@ -1174,18 +1173,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &326858596
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 326858595}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 546e367d8837740268fd6474fa6a8066, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &326858597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1201,6 +1188,7 @@ MonoBehaviour:
   enemy: {fileID: 1634728110}
   spawnerSpot: {fileID: 326858599}
   enemiesSpawned: 1
+  spiders: []
 --- !u!4 &326858599
 Transform:
   m_ObjectHideFlags: 0
@@ -1270,7 +1258,7 @@ GameObject:
   - component: {fileID: 419358352}
   - component: {fileID: 410296720}
   - component: {fileID: 415158352}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StoneFence_Wall_LOD0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1366,7 +1354,7 @@ GameObject:
   - component: {fileID: 477243855}
   - component: {fileID: 486043343}
   - component: {fileID: 473046799}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StoneFence_Wall_LOD0 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1533,7 +1521,7 @@ GameObject:
   - component: {fileID: 518446567}
   - component: {fileID: 510434023}
   - component: {fileID: 514255655}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StoneFence_Wall_LOD0 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2308,7 +2296,7 @@ GameObject:
   - component: {fileID: 647634947}
   - component: {fileID: 638609155}
   - component: {fileID: 651826883}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StoneFence_Wall_LOD0 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2452,7 +2440,7 @@ GameObject:
   - component: {fileID: 662102738}
   - component: {fileID: 662102737}
   - component: {fileID: 662102740}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: House9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2588,7 +2576,7 @@ GameObject:
   - component: {fileID: 664067784}
   - component: {fileID: 656316872}
   - component: {fileID: 668264456}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StoneFence_Wall_LOD0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2692,7 +2680,7 @@ GameObject:
   - component: {fileID: 684692589}
   - component: {fileID: 685692589}
   - component: {fileID: 687622254}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: House3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2943,7 +2931,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 741285824}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: grave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3139,7 +3127,7 @@ GameObject:
   - component: {fileID: 810769613}
   - component: {fileID: 819534797}
   - component: {fileID: 806578701}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StoneFence_Wall_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3238,7 +3226,7 @@ GameObject:
   - component: {fileID: 822867574}
   - component: {fileID: 830583158}
   - component: {fileID: 827048118}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StoneFence_Wall_LOD0 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3364,7 +3352,7 @@ GameObject:
   - component: {fileID: 840408686}
   - component: {fileID: 849205614}
   - component: {fileID: 844605614}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StoneFence_Wall_LOD0 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3384,6 +3372,101 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.52028954, y: 2.3631134, z: 3}
   m_Center: {x: 0, y: 1.1815567, z: 0}
+--- !u!1 &846822771
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 846822775}
+  - component: {fileID: 846822774}
+  - component: {fileID: 846822773}
+  - component: {fileID: 846822772}
+  m_Layer: 0
+  m_Name: platform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &846822772
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846822771}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &846822773
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846822771}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &846822774
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846822771}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &846822775
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846822771}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.487251, y: -26.32, z: -15.008583}
+  m_LocalScale: {x: 66.05323, y: -0.67529845, z: 55.56016}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!111 &849205614
 Animation:
   m_ObjectHideFlags: 0
@@ -3496,7 +3579,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 907217582}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3564,7 +3647,7 @@ GameObject:
   - component: {fileID: 913816821}
   - component: {fileID: 922614773}
   - component: {fileID: 909609525}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StoneFence_Post_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3645,7 +3728,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 971082790}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: houses
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3760,7 +3843,7 @@ GameObject:
   - component: {fileID: 1023458051}
   - component: {fileID: 1032518659}
   - component: {fileID: 1027640771}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StoneFence_Wall_LOD0 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3939,7 +4022,7 @@ GameObject:
   - component: {fileID: 1142542237}
   - component: {fileID: 1150519453}
   - component: {fileID: 1146747229}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StoneFence_Wall_LOD0 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4005,6 +4088,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3870853297941394344, guid: 112b644874eba944cb660a187dc946ea, type: 3}
+      propertyPath: spawn
+      value: 
+      objectReference: {fileID: 326858597}
     - target: {fileID: 8272843313866079656, guid: 112b644874eba944cb660a187dc946ea, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -4015,7 +4102,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8272843313866079656, guid: 112b644874eba944cb660a187dc946ea, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.88
+      value: -24.39
       objectReference: {fileID: 0}
     - target: {fileID: 8272843313866079656, guid: 112b644874eba944cb660a187dc946ea, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4057,6 +4144,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1415209373}
+    - target: {fileID: 8756364939922482966, guid: 112b644874eba944cb660a187dc946ea, type: 3}
+      propertyPath: spawnScript
+      value: 
+      objectReference: {fileID: 326858597}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 112b644874eba944cb660a187dc946ea, type: 3}
 --- !u!65 &1179181806
@@ -4094,7 +4185,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1190728427}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: fence (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4305,7 +4396,7 @@ GameObject:
   - component: {fileID: 1218030467}
   - component: {fileID: 1209265283}
   - component: {fileID: 1222221123}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StoneFence_Wall_LOD0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4339,7 +4430,7 @@ GameObject:
   - component: {fileID: 1222791206}
   - component: {fileID: 1214781222}
   - component: {fileID: 1218602726}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StoneFence_Wall_LOD0 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4524,7 +4615,7 @@ GameObject:
   - component: {fileID: 1315133510}
   - component: {fileID: 1323900742}
   - component: {fileID: 1310944902}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StoneFence_Wall_LOD0 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4909,7 +5000,7 @@ GameObject:
   - component: {fileID: 1423021545}
   - component: {fileID: 1415303913}
   - component: {fileID: 1418830633}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StoneFence_Wall_LOD0 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5143,7 +5234,7 @@ GameObject:
   - component: {fileID: 1434722385}
   - component: {fileID: 1427007313}
   - component: {fileID: 1438914193}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StoneFence_Wall_LOD0 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5240,7 +5331,7 @@ GameObject:
   - component: {fileID: 1439983632}
   - component: {fileID: 1432235792}
   - component: {fileID: 1435786960}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StoneFence_Wall_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5259,7 +5350,7 @@ GameObject:
   - component: {fileID: 1545847454}
   - component: {fileID: 1546813534}
   - component: {fileID: 1544560287}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: House7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5388,7 +5479,7 @@ PrefabInstance:
     - target: {fileID: 240468193329246070, guid: 75e32609025c7e14c9c6aa8ea454c92f, type: 3}
       propertyPath: bullet
       value: 
-      objectReference: {fileID: 7942710040377699818, guid: aa67894c306324c0da7a25cef64cb96f, type: 3}
+      objectReference: {fileID: 293213295999519653, guid: 21c404052aea94292984e97084839828, type: 3}
     - target: {fileID: 240468193329246070, guid: 75e32609025c7e14c9c6aa8ea454c92f, type: 3}
       propertyPath: player
       value: 
@@ -5576,7 +5667,7 @@ GameObject:
   - component: {fileID: 1573672340}
   - component: {fileID: 1564873364}
   - component: {fileID: 1569481556}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StoneFence_Wall_LOD0 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5760,7 +5851,7 @@ GameObject:
   - component: {fileID: 1661244907}
   - component: {fileID: 1670304491}
   - component: {fileID: 1665442603}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StoneFence_Post_LOD0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5883,7 +5974,7 @@ GameObject:
   - component: {fileID: 1758960694}
   - component: {fileID: 1757863670}
   - component: {fileID: 1759789111}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: House4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5929,7 +6020,7 @@ GameObject:
   - component: {fileID: 1786326417}
   - component: {fileID: 1794337425}
   - component: {fileID: 1782127441}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StoneFence_Wall_LOD0 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6238,7 +6329,7 @@ GameObject:
   - component: {fileID: 1890292518}
   - component: {fileID: 1881265190}
   - component: {fileID: 1894491622}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StoneFence_Wall_LOD0 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6334,7 +6425,7 @@ GameObject:
   - component: {fileID: 1936405506}
   - component: {fileID: 1937405634}
   - component: {fileID: 1935206403}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: House6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6442,7 +6533,7 @@ GameObject:
   - component: {fileID: 1948296124}
   - component: {fileID: 1957356732}
   - component: {fileID: 1952486780}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StoneFence_Wall_LOD0 (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6596,7 +6687,7 @@ GameObject:
   - component: {fileID: 1978993422}
   - component: {fileID: 1971276814}
   - component: {fileID: 1974812110}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StoneFence_Wall_LOD0 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6791,7 +6882,7 @@ GameObject:
   - component: {fileID: 2028696600}
   - component: {fileID: 2019635992}
   - component: {fileID: 2024489688}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StoneFence_Wall_LOD0 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6931,7 +7022,7 @@ GameObject:
   - component: {fileID: 2026675835}
   - component: {fileID: 2017909115}
   - component: {fileID: 2022484155}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StoneFence_Wall_LOD0 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6973,7 +7064,7 @@ GameObject:
   - component: {fileID: 2050286892}
   - component: {fileID: 2059313708}
   - component: {fileID: 2054476780}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StoneFence_Wall_LOD0 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7098,7 +7189,7 @@ GameObject:
   - component: {fileID: 2088522214}
   - component: {fileID: 2096502502}
   - component: {fileID: 2084333350}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StoneFence_Wall_LOD0 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7305,7 +7396,7 @@ GameObject:
   - component: {fileID: 2123390260}
   - component: {fileID: 2115639860}
   - component: {fileID: 2127588340}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StoneFence_Wall_LOD0 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7351,7 +7442,7 @@ GameObject:
   - component: {fileID: 33266254587202102}
   - component: {fileID: 23187664960144564}
   - component: {fileID: 65695552099929566}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tree_6_4 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7370,7 +7461,7 @@ GameObject:
   - component: {fileID: 33266254538397664}
   - component: {fileID: 23187664982743394}
   - component: {fileID: 65695552084643848}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tree_6_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7389,7 +7480,7 @@ GameObject:
   - component: {fileID: 33574243617764856}
   - component: {fileID: 23522365810710984}
   - component: {fileID: 65167527851051708}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Stump_3_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7408,7 +7499,7 @@ GameObject:
   - component: {fileID: 33896004283253999}
   - component: {fileID: 23149251239614439}
   - component: {fileID: 1820499572}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: skeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7427,7 +7518,7 @@ GameObject:
   - component: {fileID: 33067117341925732}
   - component: {fileID: 23648593397473450}
   - component: {fileID: 65693041229328096}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Jug_1_1 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7446,7 +7537,7 @@ GameObject:
   - component: {fileID: 33671751605753739}
   - component: {fileID: 23833540093088667}
   - component: {fileID: 1407024185}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: grave8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7465,7 +7556,7 @@ GameObject:
   - component: {fileID: 33671752849258930}
   - component: {fileID: 23833538031484322}
   - component: {fileID: 201863970}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: grave8 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7484,7 +7575,7 @@ GameObject:
   - component: {fileID: 33465379275725580}
   - component: {fileID: 23476354749434200}
   - component: {fileID: 65864667537073630}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tree_2_4 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7503,7 +7594,7 @@ GameObject:
   - component: {fileID: 33465379214244888}
   - component: {fileID: 23476354810932812}
   - component: {fileID: 65864667466924746}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tree_2_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7522,7 +7613,7 @@ GameObject:
   - component: {fileID: 33993281563930063}
   - component: {fileID: 23510546513764021}
   - component: {fileID: 1555391816}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: grave1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7541,7 +7632,7 @@ GameObject:
   - component: {fileID: 33993281367035075}
   - component: {fileID: 23510546180636601}
   - component: {fileID: 428628304}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: grave1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7560,7 +7651,7 @@ GameObject:
   - component: {fileID: 33897164699390163}
   - component: {fileID: 23892536634464263}
   - component: {fileID: 251862302}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: grave7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7579,7 +7670,7 @@ GameObject:
   - component: {fileID: 33407482366600370}
   - component: {fileID: 23609407829412298}
   - component: {fileID: 630759631}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: grave4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7598,7 +7689,7 @@ GameObject:
   - component: {fileID: 33407483668749963}
   - component: {fileID: 23609409131312115}
   - component: {fileID: 890986441}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: grave4 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7617,7 +7708,7 @@ GameObject:
   - component: {fileID: 33502603870168148}
   - component: {fileID: 23961940561676748}
   - component: {fileID: 65159285039622392}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: House_1_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7636,7 +7727,7 @@ GameObject:
   - component: {fileID: 33575448284301838}
   - component: {fileID: 23659090841454860}
   - component: {fileID: 260591130}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: grave2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7655,7 +7746,7 @@ GameObject:
   - component: {fileID: 33822940410625805}
   - component: {fileID: 23728492481083725}
   - component: {fileID: 1187697238}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: grave3 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7674,7 +7765,7 @@ GameObject:
   - component: {fileID: 33822939065335271}
   - component: {fileID: 23728493820083111}
   - component: {fileID: 505510008}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: grave3 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7693,7 +7784,7 @@ GameObject:
   - component: {fileID: 33822939124576167}
   - component: {fileID: 23728493846817255}
   - component: {fileID: 1393121353}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: grave3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7712,7 +7803,7 @@ GameObject:
   - component: {fileID: 33934301832546352}
   - component: {fileID: 23535908649490776}
   - component: {fileID: 485987998}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: grave5 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7731,7 +7822,7 @@ GameObject:
   - component: {fileID: 33934301499722440}
   - component: {fileID: 23535908984544160}
   - component: {fileID: 989164946}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: grave5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7750,7 +7841,7 @@ GameObject:
   - component: {fileID: 33488207460598747}
   - component: {fileID: 23723817322066333}
   - component: {fileID: 1179181806}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: grave6 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7769,7 +7860,7 @@ GameObject:
   - component: {fileID: 33488207773489741}
   - component: {fileID: 23723817543723019}
   - component: {fileID: 1861890126}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: grave6 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7788,7 +7879,7 @@ GameObject:
   - component: {fileID: 33488206028498991}
   - component: {fileID: 23723818217790057}
   - component: {fileID: 155446677}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: grave6
   m_TagString: Untagged
   m_Icon: {fileID: 0}

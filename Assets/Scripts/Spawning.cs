@@ -13,46 +13,50 @@ public class Spawning : MonoBehaviour
     public Transform spawnerSpot;
     int wave;
     public bool enemiesSpawned = true;
+    int amount = WaveManager.startingAmount;
+    bool enemiesDead = true;
+    public List<GameObject> spiders;
 
-    private void Update()
+    void Update()
     {
-        if (enemiesSpawned)
+
+        spawn();
+        Debug.Log(spiders.Count);
+    }
+
+    void spawn()
+    {
+        enemyCheck();
+        if (enemiesDead)
         {
-            enemiesSpawned = false;
-            Spawn();
+            spawnAmount();
         }
     }
 
-
-    private void Spawn(){
-        float spawnAmount = SpawnNum();
-        
-        for (int i=0; i < spawnAmount; i++){
-            GameObject newEnemy = Instantiate(enemy, randomVector3(spawnerSpot, -10, 10), Quaternion.identity);
+    void enemyCheck()
+    {
+        if (spiders.Count <= 0)
+        {
+            Debug.Log("is fax");
+            enemiesDead = true;
         }
-        print("pull");
-        Invoke("reset", 15);
-    }
-
-    void reset()
-    {
-        enemiesSpawned = true;
-    }
-
-    public float SpawnNum()
-    {
-         
-        return Random.Range(5, 10); ; //add more factors later
+        else if (spiders.Count > 0)
+        {
+            enemiesDead = false;
+        }
     }
     
-    Vector3 randomVector3 (Transform host, float min, float max)
-    {
-        Vector3 basePosition = host.position;
-        float offsetX = Random.Range(min, max);
-        float offsetZ = Random.Range(min, max);
-        basePosition += new Vector3(offsetX, 0, offsetZ);
-        return basePosition;
 
+    IEnumerator spawnAmount()
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            yield return new WaitForSeconds(5f);
+            GameObject fart = Instantiate(enemy, WaveManager.randomVector3(spawnerSpot, -5, 5), Quaternion.identity);
+            spiders.Add(fart);
+        }
+        amount += 5;
     }
-    
+
+
 }

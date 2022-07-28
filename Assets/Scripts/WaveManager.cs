@@ -4,27 +4,15 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
-    [SerializeField] GameObject spiderPrefab;
-    int startingAmount = 5;
-    // Start is called before the first frame update
-    void Start()
+    public static int startingAmount = 5;
+    public static Vector3 randomVector3(Transform host, float min, float max)
     {
-        
+        Vector3 basePosition = host.position;
+        float offsetX = Random.Range(min, max);
+        float offsetZ = Random.Range(min, max);
+        basePosition += new Vector3(offsetX, 0, offsetZ);
+        return basePosition;
+
     }
 
-    /*void spawnEnemies()
-    {
-
-        for (int i = 0; i < startingAmount; i++)
-        {
-            GameObject spider = Instantiate(spiderPrefab, )
-        }
-
-    }*/
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

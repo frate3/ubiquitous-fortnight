@@ -5,11 +5,13 @@ using UnityEngine.AI;
 
 public class enemyMovement : MonoBehaviour
 {
+    [SerializeField] Spawning spawnScript;
     [SerializeField] GameObject player;
     NavMeshAgent agent;
     int count;
     Animator animator;
     bool walking;
+    bool dead = false;
 
     // Start is called before the first frame update
 
@@ -48,17 +50,20 @@ public class enemyMovement : MonoBehaviour
 
     private void Die () {
 
+        
+        spawnScript.spiders.Remove(gameObject);
         Destroy(gameObject);
     }
 
     void Check(){
 
 
-        if (count >= 5){
+        if (count >= 5 && !dead){
             animator.SetBool("Dead", true);
             animator.SetBool("Attacking", false);
             walking = false;
 
+            dead = true;
             Invoke("Die", 1.15f); 
         }
     }

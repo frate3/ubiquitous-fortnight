@@ -119,7 +119,7 @@ public class moveemnt : MonoBehaviour
 
         jump();
 
-        Debug.Log(health);
+        
 
         cc.Move(moveDirection * Time.deltaTime);
     }
