@@ -24,6 +24,7 @@ public class moveemnt : MonoBehaviour
     public float camSpeed = 4f;
     CharacterController cc;
     [SerializeField] Text tx;
+    [SerializeField] Animator anim;
 
     bool isTouching;
     float lastSpeed;
@@ -43,6 +44,7 @@ public class moveemnt : MonoBehaviour
     bool allowSprint;
     bool flashState = true;
     public GameObject flashlight;
+    [SerializeField] float boostSpeed = 1;
 
 
 
@@ -88,7 +90,7 @@ public class moveemnt : MonoBehaviour
         Terrain();
         Flash();
         onTriggerMe();
-        Objective();
+        //Objective();
         if (pb != null)
         {
             pb.BarValue = health;
@@ -119,7 +121,10 @@ public class moveemnt : MonoBehaviour
 
         jump();
 
-        
+        Debug.Log(moveDirection.magnitude);
+        anim.speed = (moveDirection.magnitude - 5) * boostSpeed / 5;
+
+
 
         cc.Move(moveDirection * Time.deltaTime);
     }
